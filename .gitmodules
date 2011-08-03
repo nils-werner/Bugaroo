@@ -22,3 +22,18 @@
 [submodule "extensions/xssfilter"]
 	path = extensions/xssfilter
 	url = git://github.com/symphonycms/xssfilter.git
+[submodule "extensions/order_entries"]
+	path = extensions/order_entries
+	url = git://github.com/nickdunn/order_entries.git
+[submodule "extensions/globalresourceloader"]
+	path = extensions/globalresourceloader
+	url = git://github.com/rowan-lewis/globalresourceloader.git
+[submodule "extensions/color_chooser_field"]
+	path = extensions/color_chooser_field
+	url = git://github.com/MrBlank/color_chooser_field.git
+[submodule "extensions/members"]
+	path = extensions/members
+	url = git://github.com/symphonycms/members.git
+[submodule "extensions/dump_db"]
+	path = extensions/dump_db
+	url = git://github.com/nils-werner/dump_db.git
