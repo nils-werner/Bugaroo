@@ -20,7 +20,7 @@ CREATE TABLE `sym_authors` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_authors` ***
-INSERT INTO `sym_authors` (`id`, `username`, `password`, `first_name`, `last_name`, `email`, `last_seen`, `user_type`, `primary`, `default_area`, `auth_token_active`, `role_id`, `language`) VALUES (1, 'nils', '87b3be43b9ac352c2d98c7029e7ccf8230c87b51', 'Nils', 'Werner', 'nils.werner@gmail.com', '2011-08-03 17:29:24', 'developer', 'yes', 6, 'no', 0, NULL);
+INSERT INTO `sym_authors` (`id`, `username`, `password`, `first_name`, `last_name`, `email`, `last_seen`, `user_type`, `primary`, `default_area`, `auth_token_active`, `role_id`, `language`) VALUES (1, 'bugaroo', 'e293cf076a59052a66147f91a2028881fd6a1603', 'Default', 'Administrator', 'nobody@bugaroo.symphony-cms.com', '2011-08-04 11:17:52', 'developer', 'yes', '/blueprints/sections/', 'no', 0, NULL);
 
 -- *** STRUCTURE: `sym_forgotpass` ***
 DROP TABLE IF EXISTS `sym_forgotpass`;
