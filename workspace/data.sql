@@ -25,7 +25,7 @@ CREATE TABLE `sym_entries` (
   KEY `author_id` (`author_id`),
   KEY `creation_date` (`creation_date`),
   KEY `creation_date_gmt` (`creation_date_gmt`)
-) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=76 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries` ***
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (15, 10, 1, '2010-02-06 12:25:22', '2010-02-06 11:25:22');
@@ -62,6 +62,8 @@ INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `cr
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (55, 13, 1, '2010-02-06 20:33:33', '2010-02-06 19:33:33');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (54, 13, 1, '2010-02-06 20:32:08', '2010-02-06 19:32:08');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (73, 9, 1, '2010-02-12 13:46:29', '2010-02-12 12:46:29');
+INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (74, 15, 1, '2011-08-04 11:53:40', '2011-08-04 09:53:40');
+INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (75, 15, 1, '2011-08-04 11:54:36', '2011-08-04 09:54:36');
 
 -- *** STRUCTURE: `sym_entries_data_100` ***
 DROP TABLE IF EXISTS `sym_entries_data_100`;
@@ -72,9 +74,11 @@ CREATE TABLE `sym_entries_data_100` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_100` ***
+INSERT INTO `sym_entries_data_100` (`id`, `entry_id`, `relation_id`) VALUES (1, 74, NULL);
+INSERT INTO `sym_entries_data_100` (`id`, `entry_id`, `relation_id`) VALUES (2, 75, 13);
 
 -- *** STRUCTURE: `sym_entries_data_101` ***
 DROP TABLE IF EXISTS `sym_entries_data_101`;
@@ -85,9 +89,11 @@ CREATE TABLE `sym_entries_data_101` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_101` ***
+INSERT INTO `sym_entries_data_101` (`id`, `entry_id`, `relation_id`) VALUES (1, 74, NULL);
+INSERT INTO `sym_entries_data_101` (`id`, `entry_id`, `relation_id`) VALUES (2, 75, NULL);
 
 -- *** STRUCTURE: `sym_entries_data_102` ***
 DROP TABLE IF EXISTS `sym_entries_data_102`;
@@ -98,9 +104,11 @@ CREATE TABLE `sym_entries_data_102` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_102` ***
+INSERT INTO `sym_entries_data_102` (`id`, `entry_id`, `relation_id`) VALUES (1, 74, NULL);
+INSERT INTO `sym_entries_data_102` (`id`, `entry_id`, `relation_id`) VALUES (2, 75, NULL);
 
 -- *** STRUCTURE: `sym_entries_data_23` ***
 DROP TABLE IF EXISTS `sym_entries_data_23`;
@@ -1188,9 +1196,11 @@ CREATE TABLE `sym_entries_data_94` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`value`),
   KEY `entry_id` (`entry_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_94` ***
+INSERT INTO `sym_entries_data_94` (`id`, `entry_id`, `value`) VALUES (1, 74, '(nobody)');
+INSERT INTO `sym_entries_data_94` (`id`, `entry_id`, `value`) VALUES (2, 75, 'nils');
 
 -- *** STRUCTURE: `sym_entries_data_95` ***
 DROP TABLE IF EXISTS `sym_entries_data_95`;
@@ -1200,9 +1210,11 @@ CREATE TABLE `sym_entries_data_95` (
   `role_id` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_95` ***
+INSERT INTO `sym_entries_data_95` (`id`, `entry_id`, `role_id`) VALUES (1, 74, 1);
+INSERT INTO `sym_entries_data_95` (`id`, `entry_id`, `role_id`) VALUES (2, 75, 2);
 
 -- *** STRUCTURE: `sym_entries_data_96` ***
 DROP TABLE IF EXISTS `sym_entries_data_96`;
@@ -1213,9 +1225,11 @@ CREATE TABLE `sym_entries_data_96` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`value`),
   KEY `entry_id` (`entry_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_96` ***
+INSERT INTO `sym_entries_data_96` (`id`, `entry_id`, `value`) VALUES (1, 74, 'nobody@bugaroo.symphony-cms.com');
+INSERT INTO `sym_entries_data_96` (`id`, `entry_id`, `value`) VALUES (2, 75, 'nils.werner@gmail.com');
 
 -- *** STRUCTURE: `sym_entries_data_97` ***
 DROP TABLE IF EXISTS `sym_entries_data_97`;
@@ -1234,9 +1248,11 @@ CREATE TABLE `sym_entries_data_97` (
   KEY `length` (`length`),
   KEY `password` (`password`),
   KEY `expires` (`expires`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_97` ***
+INSERT INTO `sym_entries_data_97` (`id`, `entry_id`, `password`, `recovery-code`, `length`, `strength`, `reset`, `expires`) VALUES (1, 74, '11f7908e5a96ef99319757197ce298f604bcd5c9', NULL, 9, 'good', 'no', NULL);
+INSERT INTO `sym_entries_data_97` (`id`, `entry_id`, `password`, `recovery-code`, `length`, `strength`, `reset`, `expires`) VALUES (2, 75, 'd01d4a87609321d22ccb02e61b8397cd2bc21ed9', NULL, 8, 'good', 'no', NULL);
 
 -- *** STRUCTURE: `sym_entries_data_98` ***
 DROP TABLE IF EXISTS `sym_entries_data_98`;
@@ -1249,9 +1265,11 @@ CREATE TABLE `sym_entries_data_98` (
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `handle` (`handle`),
   KEY `value` (`value`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_98` ***
+INSERT INTO `sym_entries_data_98` (`id`, `entry_id`, `handle`, `value`) VALUES (1, 74, 'nobody', 'Nobody');
+INSERT INTO `sym_entries_data_98` (`id`, `entry_id`, `handle`, `value`) VALUES (2, 75, 'nils-werner', 'Nils Werner');
 
 -- *** STRUCTURE: `sym_entries_data_99` ***
 DROP TABLE IF EXISTS `sym_entries_data_99`;
@@ -1264,9 +1282,10 @@ CREATE TABLE `sym_entries_data_99` (
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `handle` (`handle`),
   KEY `value` (`value`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_99` ***
+INSERT INTO `sym_entries_data_99` (`id`, `entry_id`, `handle`, `value`) VALUES (1, 75, 'obsessive-media', 'Obsessive Media');
 
 -- *** STRUCTURE: `sym_extensions` ***
 DROP TABLE IF EXISTS `sym_extensions`;
@@ -1421,11 +1440,11 @@ INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (91, 'Detailed', 'detailed', 'selectbox_link', 7, 'no', 8, 'sidebar', 'no');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (92, 'Hide', 'hide', 'selectbox_link', 7, 'no', 9, 'sidebar', 'no');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (93, 'Suscriptions', 'suscriptions', 'selectbox_link', 7, 'no', 10, 'sidebar', 'no');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (94, 'Username', 'username', 'memberusername', 15, 'yes', 0, 'main', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (95, 'Role', 'role', 'memberrole', 15, 'yes', 3, 'main', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (96, 'Email', 'email', 'memberemail', 15, 'yes', 1, 'main', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (97, 'Password', 'password', 'memberpassword', 15, 'yes', 2, 'main', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (98, 'Name', 'name', 'input', 15, 'yes', 4, 'sidebar', 'yes');
+INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (94, 'Username', 'username', 'memberusername', 15, 'yes', 1, 'main', 'yes');
+INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (95, 'Role', 'role', 'memberrole', 15, 'yes', 4, 'main', 'yes');
+INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (96, 'Email', 'email', 'memberemail', 15, 'yes', 2, 'main', 'yes');
+INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (97, 'Password', 'password', 'memberpassword', 15, 'yes', 3, 'main', 'yes');
+INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (98, 'Name', 'name', 'input', 15, 'yes', 0, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (99, 'Company', 'company', 'input', 15, 'no', 5, 'sidebar', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (100, 'Detailed', 'detailed', 'selectbox_link', 15, 'no', 6, 'sidebar', 'no');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (101, 'Hide', 'hide', 'selectbox_link', 15, 'no', 7, 'sidebar', 'no');
@@ -1505,7 +1524,7 @@ CREATE TABLE `sym_fields_input` (
   `validator` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=150 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=152 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_input` ***
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (141, 89, NULL);
@@ -1520,8 +1539,8 @@ INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (145, 26, 
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (140, 24, '/^\\w(?:\\.?[\\w%+-]+)*@\\w(?:[\\w-]*\\.)+?[a-z]{2,}$/i');
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (138, 23, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (142, 90, NULL);
-INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (148, 98, NULL);
-INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (149, 99, NULL);
+INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (150, 98, NULL);
+INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (151, 99, NULL);
 
 -- *** STRUCTURE: `sym_fields_member` ***
 DROP TABLE IF EXISTS `sym_fields_member`;
@@ -1541,10 +1560,10 @@ CREATE TABLE `sym_fields_memberemail` (
   `field_id` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_memberemail` ***
-INSERT INTO `sym_fields_memberemail` (`id`, `field_id`) VALUES (2, 96);
+INSERT INTO `sym_fields_memberemail` (`id`, `field_id`) VALUES (3, 96);
 
 -- *** STRUCTURE: `sym_fields_memberlink` ***
 DROP TABLE IF EXISTS `sym_fields_memberlink`;
@@ -1569,10 +1588,10 @@ CREATE TABLE `sym_fields_memberpassword` (
   `code_expiry` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_memberpassword` ***
-INSERT INTO `sym_fields_memberpassword` (`id`, `field_id`, `length`, `strength`, `salt`, `code_expiry`) VALUES (2, 97, 6, 'good', 'bugaroo', '1 hour');
+INSERT INTO `sym_fields_memberpassword` (`id`, `field_id`, `length`, `strength`, `salt`, `code_expiry`) VALUES (3, 97, 6, 'good', 'bugaroo', '1 hour');
 
 -- *** STRUCTURE: `sym_fields_memberrole` ***
 DROP TABLE IF EXISTS `sym_fields_memberrole`;
@@ -1582,10 +1601,10 @@ CREATE TABLE `sym_fields_memberrole` (
   `default_role` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_memberrole` ***
-INSERT INTO `sym_fields_memberrole` (`id`, `field_id`, `default_role`) VALUES (3, 95, 1);
+INSERT INTO `sym_fields_memberrole` (`id`, `field_id`, `default_role`) VALUES (4, 95, 1);
 
 -- *** STRUCTURE: `sym_fields_memberusername` ***
 DROP TABLE IF EXISTS `sym_fields_memberusername`;
@@ -1595,10 +1614,10 @@ CREATE TABLE `sym_fields_memberusername` (
   `validator` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_memberusername` ***
-INSERT INTO `sym_fields_memberusername` (`id`, `field_id`, `validator`) VALUES (4, 94, NULL);
+INSERT INTO `sym_fields_memberusername` (`id`, `field_id`, `validator`) VALUES (5, 94, NULL);
 
 -- *** STRUCTURE: `sym_fields_order_entries` ***
 DROP TABLE IF EXISTS `sym_fields_order_entries`;
@@ -1647,7 +1666,7 @@ CREATE TABLE `sym_fields_selectbox_link` (
   `show_association` enum('yes','no') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=290 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=293 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_selectbox_link` ***
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (283, 30, 'yes', 23, 20, 'yes');
@@ -1671,9 +1690,9 @@ INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selec
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (278, 91, 'yes', 26, 20, 'yes');
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (279, 92, 'yes', 26, 20, 'yes');
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (280, 93, 'yes', 37, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (287, 100, 'yes', 26, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (288, 101, 'yes', 26, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (289, 102, 'yes', 37, 2000, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (290, 100, 'yes', 26, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (291, 101, 'yes', 26, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (292, 102, 'yes', 37, 2000, 'yes');
 
 -- *** STRUCTURE: `sym_fields_taglist` ***
 DROP TABLE IF EXISTS `sym_fields_taglist`;
@@ -1856,7 +1875,7 @@ CREATE TABLE `sym_sections_association` (
   `hide_association` enum('yes','no') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `parent_section_id` (`parent_section_id`,`child_section_id`,`child_section_field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=290 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=293 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_sections_association` ***
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (283, 7, 23, 8, 30, 'no');
@@ -1880,6 +1899,6 @@ INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_secti
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (278, 8, 26, 7, 91, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (279, 8, 26, 7, 92, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (280, 12, 37, 7, 93, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (287, 8, 26, 15, 100, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (288, 8, 26, 15, 101, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (289, 12, 37, 15, 102, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (290, 8, 26, 15, 100, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (291, 8, 26, 15, 101, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (292, 12, 37, 15, 102, 'no');
