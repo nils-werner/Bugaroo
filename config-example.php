@@ -109,16 +109,46 @@
 		########
 
 
-		###### MEMBERS ######
-		'members' => array(
-			'cookie-prefix' => 'sym-members',
+		###### DUMP_DB ######
+		'dump_db' => array(
+			'last_sync' => '2011-08-04T11:50:57+02:00',
 		),
 		########
 
 
-		###### DUMP_DB ######
-		'dump_db' => array(
-			'last_sync' => '2011-08-03T17:29:24+02:00',
+		###### EMAIL ######
+		'email' => array(
+			'default_gateway' => 'sendmail',
+		),
+		########
+
+
+		###### EMAIL_SENDMAIL ######
+		'email_sendmail' => array(
+			'from_name' => 'Symphony',
+			'from_address' => 'noreply@www.bugaroo.localhost',
+		),
+		########
+
+
+		###### EMAIL_SMTP ######
+		'email_smtp' => array(
+			'from_name' => 'Symphony',
+			'from_address' => 'noreply@www.bugaroo.localhost',
+			'host' => '127.0.0.1',
+			'port' => '25',
+			'secure' => 'no',
+			'auth' => '0',
+			'username' => null,
+			'password' => null,
+		),
+		########
+
+
+		###### MEMBERS ######
+		'members' => array(
+			'cookie-prefix' => 'sym-members',
+			'section' => '15',
 		),
 		########
 	);
