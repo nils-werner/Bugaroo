@@ -1508,13 +1508,13 @@ CREATE TABLE `sym_fields_date` (
   `pre_populate` enum('yes','no') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_date` ***
-INSERT INTO `sym_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (44, 68, 'yes');
-INSERT INTO `sym_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (41, 67, 'yes');
+INSERT INTO `sym_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (48, 68, 'yes');
+INSERT INTO `sym_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (46, 67, 'yes');
 INSERT INTO `sym_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (45, 34, 'yes');
-INSERT INTO `sym_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (42, 74, 'yes');
+INSERT INTO `sym_fields_date` (`id`, `field_id`, `pre_populate`) VALUES (47, 74, 'yes');
 
 -- *** STRUCTURE: `sym_fields_input` ***
 DROP TABLE IF EXISTS `sym_fields_input`;
@@ -1524,18 +1524,18 @@ CREATE TABLE `sym_fields_input` (
   `validator` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=152 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=154 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_input` ***
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (141, 89, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (137, 82, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (64, 57, NULL);
-INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (106, 37, NULL);
+INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (153, 37, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (139, 48, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (144, 31, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (54, 35, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (143, 36, NULL);
-INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (145, 26, NULL);
+INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (152, 26, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (140, 24, '/^\\w(?:\\.?[\\w%+-]+)*@\\w(?:[\\w-]*\\.)+?[a-z]{2,}$/i');
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (138, 23, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (142, 90, NULL);
@@ -1628,13 +1628,13 @@ CREATE TABLE `sym_fields_order_entries` (
   `hide` enum('yes','no') DEFAULT 'no',
   PRIMARY KEY (`id`),
   UNIQUE KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_fields_order_entries` ***
 INSERT INTO `sym_fields_order_entries` (`id`, `field_id`, `force_sort`, `hide`) VALUES (15, 63, 'yes', 'yes');
 INSERT INTO `sym_fields_order_entries` (`id`, `field_id`, `force_sort`, `hide`) VALUES (8, 64, 'yes', 'yes');
 INSERT INTO `sym_fields_order_entries` (`id`, `field_id`, `force_sort`, `hide`) VALUES (12, 65, 'yes', 'yes');
-INSERT INTO `sym_fields_order_entries` (`id`, `field_id`, `force_sort`, `hide`) VALUES (16, 76, NULL, 'no');
+INSERT INTO `sym_fields_order_entries` (`id`, `field_id`, `force_sort`, `hide`) VALUES (17, 76, NULL, 'no');
 
 -- *** STRUCTURE: `sym_fields_select` ***
 DROP TABLE IF EXISTS `sym_fields_select`;
@@ -1648,10 +1648,10 @@ CREATE TABLE `sym_fields_select` (
   `sort_options` enum('yes','no') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_select` ***
-INSERT INTO `sym_fields_select` (`id`, `field_id`, `allow_multiple_selection`, `static_options`, `dynamic_options`, `show_association`, `sort_options`) VALUES (24, 28, 'no', 'Active, Inactive, Finished', NULL, 'yes', 'no');
+INSERT INTO `sym_fields_select` (`id`, `field_id`, `allow_multiple_selection`, `static_options`, `dynamic_options`, `show_association`, `sort_options`) VALUES (25, 28, 'no', 'Active, Inactive, Finished', NULL, 'yes', 'no');
 INSERT INTO `sym_fields_select` (`id`, `field_id`, `allow_multiple_selection`, `static_options`, `dynamic_options`, `show_association`, `sort_options`) VALUES (23, 71, 'no', 'Active,Inactive,Finished', NULL, 'yes', 'no');
 INSERT INTO `sym_fields_select` (`id`, `field_id`, `allow_multiple_selection`, `static_options`, `dynamic_options`, `show_association`, `sort_options`) VALUES (22, 83, 'no', 'Inactive,Customer,Developer', NULL, 'yes', 'no');
 
@@ -1666,27 +1666,27 @@ CREATE TABLE `sym_fields_selectbox_link` (
   `show_association` enum('yes','no') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=293 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=310 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_selectbox_link` ***
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (283, 30, 'yes', 23, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (282, 29, 'yes', 23, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (294, 30, 'yes', 98, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (293, 29, 'yes', 98, 20, 'yes');
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (281, 33, 'no', 26, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (253, 39, 'no', 26, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (247, 40, 'no', 23, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (248, 41, 'no', 35, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (249, 42, 'no', 36, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (250, 43, 'no', 23, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (251, 44, 'no', 31, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (262, 50, 'no', 23, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (264, 52, 'no', 36, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (265, 53, 'no', 23, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (266, 54, 'no', 31, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (268, 55, 'no', 37, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (252, 58, 'no', 57, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (267, 59, 'no', 57, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (263, 73, 'no', 35, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (254, 84, 'no', 23, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (301, 39, 'no', 26, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (295, 40, 'no', 98, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (296, 41, 'no', 35, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (297, 42, 'no', 36, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (298, 43, 'no', 98, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (299, 44, 'no', 31, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (303, 50, 'no', 98, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (305, 52, 'no', 36, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (306, 53, 'no', 98, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (307, 54, 'no', 31, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (309, 55, 'no', 37, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (300, 58, 'no', 57, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (308, 59, 'no', 57, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (304, 73, 'no', 35, 20, 'yes');
+INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (302, 84, 'no', 98, 20, 'yes');
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (278, 91, 'yes', 26, 20, 'yes');
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (279, 92, 'yes', 26, 20, 'yes');
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (280, 93, 'yes', 37, 20, 'yes');
@@ -1717,12 +1717,12 @@ CREATE TABLE `sym_fields_textarea` (
   `size` int(3) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_textarea` ***
-INSERT INTO `sym_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (46, 49, 'markdown_extra_with_smartypants', 15);
+INSERT INTO `sym_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (50, 49, 'markdown_extra_with_smartypants', 15);
 INSERT INTO `sym_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (47, 32, 'markdown_extra_with_smartypants', 15);
-INSERT INTO `sym_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (48, 27, 'markdown_extra_with_smartypants', 15);
+INSERT INTO `sym_fields_textarea` (`id`, `field_id`, `formatter`, `size`) VALUES (49, 27, 'markdown_extra_with_smartypants', 15);
 
 -- *** STRUCTURE: `sym_fields_upload` ***
 DROP TABLE IF EXISTS `sym_fields_upload`;
@@ -1733,10 +1733,10 @@ CREATE TABLE `sym_fields_upload` (
   `validator` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_upload` ***
-INSERT INTO `sym_fields_upload` (`id`, `field_id`, `destination`, `validator`) VALUES (8, 75, '/workspace/uploads', NULL);
+INSERT INTO `sym_fields_upload` (`id`, `field_id`, `destination`, `validator`) VALUES (9, 75, '/workspace/uploads', NULL);
 
 -- *** STRUCTURE: `sym_members_roles` ***
 DROP TABLE IF EXISTS `sym_members_roles`;
@@ -1875,27 +1875,27 @@ CREATE TABLE `sym_sections_association` (
   `hide_association` enum('yes','no') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
   PRIMARY KEY (`id`),
   KEY `parent_section_id` (`parent_section_id`,`child_section_id`,`child_section_field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=293 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=310 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_sections_association` ***
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (283, 7, 23, 8, 30, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (282, 7, 23, 8, 29, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (294, 15, 98, 8, 30, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (293, 15, 98, 8, 29, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (281, 8, 26, 9, 33, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (253, 8, 26, 12, 39, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (247, 7, 23, 12, 40, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (248, 10, 35, 12, 41, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (249, 11, 36, 12, 42, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (250, 7, 23, 12, 43, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (251, 9, 31, 12, 44, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (262, 7, 23, 13, 50, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (263, 10, 35, 13, 73, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (264, 11, 36, 13, 52, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (265, 7, 23, 13, 53, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (266, 9, 31, 13, 54, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (268, 12, 37, 13, 55, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (252, 14, 57, 12, 58, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (267, 14, 57, 13, 59, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (254, 7, 23, 12, 84, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (301, 8, 26, 12, 39, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (295, 15, 98, 12, 40, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (296, 10, 35, 12, 41, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (297, 11, 36, 12, 42, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (298, 15, 98, 12, 43, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (299, 9, 31, 12, 44, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (303, 15, 98, 13, 50, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (304, 10, 35, 13, 73, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (305, 11, 36, 13, 52, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (306, 15, 98, 13, 53, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (307, 9, 31, 13, 54, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (309, 12, 37, 13, 55, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (300, 14, 57, 12, 58, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (308, 14, 57, 13, 59, 'no');
+INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (302, 15, 98, 12, 84, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (278, 8, 26, 7, 91, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (279, 8, 26, 7, 92, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (280, 12, 37, 7, 93, 'no');
