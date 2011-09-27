@@ -1193,15 +1193,16 @@ CREATE TABLE `sym_entries_data_94` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `entry_id` int(11) unsigned NOT NULL,
   `value` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `handle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`value`),
-  UNIQUE KEY `value` (`value`),
-  KEY `entry_id` (`entry_id`)
+  UNIQUE KEY `username` (`handle`),
+  KEY `entry_id` (`entry_id`),
+  KEY `value` (`value`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_94` ***
-INSERT INTO `sym_entries_data_94` (`id`, `entry_id`, `value`) VALUES (1, 74, '(nobody)');
-INSERT INTO `sym_entries_data_94` (`id`, `entry_id`, `value`) VALUES (2, 75, 'nils');
+INSERT INTO `sym_entries_data_94` (`id`, `entry_id`, `value`, `handle`) VALUES (1, 74, '(nobody)', 'nobody');
+INSERT INTO `sym_entries_data_94` (`id`, `entry_id`, `value`, `handle`) VALUES (2, 75, 'nils', 'nils');
 
 -- *** STRUCTURE: `sym_entries_data_95` ***
 DROP TABLE IF EXISTS `sym_entries_data_95`;
@@ -1311,7 +1312,7 @@ INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (89, 'co
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (91, 'order_entries', 'enabled', '1.9.6');
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (100, 'globalresourceloader', 'enabled', '1.0.5');
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (103, 'dump_db', 'enabled', 1.08);
-INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (104, 'members', 'enabled', 1.1);
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (104, 'members', 'enabled', '1.1.1');
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (101, 'xssfilter', 'enabled', 1.1);
 
 -- *** STRUCTURE: `sym_extensions_delegates` ***
@@ -1326,7 +1327,7 @@ CREATE TABLE `sym_extensions_delegates` (
   KEY `extension_id` (`extension_id`),
   KEY `page` (`page`),
   KEY `delegate` (`delegate`)
-) ENGINE=MyISAM AUTO_INCREMENT=170 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=180 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_extensions_delegates` ***
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (141, 101, '/blueprints/events/new/', 'AppendEventFilter', 'appendEventFilter');
@@ -1353,16 +1354,16 @@ INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (144, 85, '/frontend/', 'FrontendDevKitResolve', 'frontendDevKitResolve');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (126, 78, '/frontend/', 'FrontendPrePageResolve', '__checkForMaintenanceMode');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (127, 78, '/frontend/', 'FrontendParamsResolve', '__addParam');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (167, 104, '/system/preferences/', 'Save', 'savePreferences');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (166, 104, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (165, 104, '/backend/', 'AdminPagePreGenerate', 'appendAssets');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (164, 104, '/frontend/', 'EventPostSaveFilter', 'processPostSaveFilter');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (163, 104, '/frontend/', 'EventPreSaveFilter', 'checkEventPermissions');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (162, 104, '/frontend/', 'FrontendProcessEvents', 'appendLoginStatusToEventXML');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (161, 104, '/frontend/', 'FrontendParamsResolve', 'addMemberDetailsToPageParams');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (160, 104, '/frontend/', 'FrontendPageResolved', 'checkFrontendPagePermissions');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (168, 104, '/blueprints/events/new/', 'AppendEventFilter', 'appendFilter');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (169, 104, '/blueprints/events/edit/', 'AppendEventFilter', 'appendFilter');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (177, 104, '/system/preferences/', 'Save', 'savePreferences');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (176, 104, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (175, 104, '/backend/', 'AdminPagePreGenerate', 'appendAssets');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (174, 104, '/frontend/', 'EventPostSaveFilter', 'processPostSaveFilter');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (173, 104, '/frontend/', 'EventPreSaveFilter', 'checkEventPermissions');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (172, 104, '/frontend/', 'FrontendProcessEvents', 'appendLoginStatusToEventXML');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (171, 104, '/frontend/', 'FrontendParamsResolve', 'addMemberDetailsToPageParams');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (170, 104, '/frontend/', 'FrontendPageResolved', 'checkFrontendPagePermissions');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (178, 104, '/blueprints/events/new/', 'AppendEventFilter', 'appendFilter');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (179, 104, '/blueprints/events/edit/', 'AppendEventFilter', 'appendFilter');
 
 -- *** STRUCTURE: `sym_fields` ***
 DROP TABLE IF EXISTS `sym_fields`;
