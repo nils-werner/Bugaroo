@@ -15,14 +15,14 @@ This util assumes that your master matches "/" and your page matches "data".
 <xsl:template match="data[events/member-login-info/@logged-in = 'no']">
 	<h2>Login</h2>
 	<xsl:choose>
-		<xsl:when test="/data/events/user-login/@result = 'success'">
+		<xsl:when test="/data/events/member-login-info/@result = 'success'">
 			<h3>Successfully logged in!</h3>
 			<p>
 				Continue to your <a href="{$root}">Dashboard</a>.
 			</p>
 		</xsl:when>
 		<xsl:otherwise>
-			<xsl:if test="/data/events/user-login/@result = 'failure'">
+			<xsl:if test="/data/events/member-login-info/@result = 'error'">
 				<h3>Error!</h3>
 				<p>
 					Please try again.
@@ -35,7 +35,7 @@ This util assumes that your master matches "/" and your page matches "data".
 					<div class="clearfix">
 						<p>
 							<label>Email address
-								<input name="fields[email]" type="text" />
+								<input name="fields[email]" type="text" value="/data/events/member-login-info/postvalues/email"/>
 							</label>
 						</p>
 						<p>
