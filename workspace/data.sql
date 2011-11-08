@@ -1766,13 +1766,46 @@ CREATE TABLE `sym_members_roles_event_permissions` (
   `level` smallint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `role_id` (`role_id`,`event`,`action`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_members_roles_event_permissions` ***
-INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (1, 2, 'login', 'edit', 0);
-INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (2, 3, 'login', 'edit', 0);
-INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (3, 4, 'login', 'edit', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (5, 2, 'edit_issue', 'create', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (17, 3, 'edit_issue', 'create', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (29, 4, 'edit_issue', 'create', 1);
 INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (4, 5, 'login', 'edit', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (6, 2, 'edit_issue', 'edit', 2);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (7, 2, 'edit_member', 'create', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (8, 2, 'edit_member', 'edit', 2);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (9, 2, 'edit_message', 'create', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (10, 2, 'edit_message', 'edit', 2);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (11, 2, 'edit_milestone', 'create', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (12, 2, 'edit_milestone', 'edit', 2);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (13, 2, 'edit_project', 'create', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (14, 2, 'edit_project', 'edit', 2);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (15, 2, 'login', 'create', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (16, 2, 'login', 'edit', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (18, 3, 'edit_issue', 'edit', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (19, 3, 'edit_member', 'create', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (20, 3, 'edit_member', 'edit', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (21, 3, 'edit_message', 'create', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (22, 3, 'edit_message', 'edit', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (23, 3, 'edit_milestone', 'create', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (24, 3, 'edit_milestone', 'edit', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (25, 3, 'edit_project', 'create', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (26, 3, 'edit_project', 'edit', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (27, 3, 'login', 'create', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (28, 3, 'login', 'edit', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (30, 4, 'edit_issue', 'edit', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (31, 4, 'edit_member', 'create', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (32, 4, 'edit_member', 'edit', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (33, 4, 'edit_message', 'create', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (34, 4, 'edit_message', 'edit', 1);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (35, 4, 'edit_milestone', 'create', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (36, 4, 'edit_milestone', 'edit', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (37, 4, 'edit_project', 'create', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (38, 4, 'edit_project', 'edit', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (39, 4, 'login', 'create', 0);
+INSERT INTO `sym_members_roles_event_permissions` (`id`, `role_id`, `event`, `action`, `level`) VALUES (40, 4, 'login', 'edit', 0);
 
 -- *** STRUCTURE: `sym_members_roles_forbidden_pages` ***
 DROP TABLE IF EXISTS `sym_members_roles_forbidden_pages`;
