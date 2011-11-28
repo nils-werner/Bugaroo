@@ -35,7 +35,7 @@
 	
 	<h3>Filter</h3>
 	<form action="" method="get">
-		<input type="text" name="q" id="filter-input" value="" />
+		<input type="text" name="q" id="filter-input" value="{/data/params/url-q}" />
 	</form>
 	<a class="toggle-filter" href="#">Toggle Filter Form</a>
 	<p id="filter-form">
