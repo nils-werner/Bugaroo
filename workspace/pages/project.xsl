@@ -19,7 +19,7 @@
 <xsl:template match="data">
 	<h2><xsl:value-of select="project-project/entry/title" /></h2>
 	
-	<xsl:apply-templates select="project-project" />
+	
 	
 	<xsl:apply-templates select="project-project-issues-filtered" />
 </xsl:template>
