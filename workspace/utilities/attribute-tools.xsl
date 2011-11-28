@@ -6,82 +6,80 @@
 
 <xsl:strip-space elements="@"/> 
 
-<xsl:template name="attribute-list-table">
-	<xsl:param name="node" />
-	
+<xsl:template match="project-project-issues-filtered/entry" mode="attribute-list-table">
 	<ul>
-		<li class="id">#<xsl:value-of select="$node/@id" /></li>
+		<li class="id">#<xsl:value-of select="./@id" /></li>
 		<li class="status">
-			<xsl:attribute name="style">background-color: <xsl:value-of select="/data/index-status/entry[@id = $node/status/item/@id]/backgroundcolor" />;</xsl:attribute>
+			<xsl:attribute name="style">background-color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/backgroundcolor" />;</xsl:attribute>
 			<span>Status</span>
 			<a>
 				<xsl:attribute name="href">
 					<xsl:call-template name="toggle-get-param">
 						<xsl:with-param name="param" select="'status'" />
-						<xsl:with-param name="value" select="$node/status/item/@id" />
+						<xsl:with-param name="value" select="./status/item/@id" />
 					</xsl:call-template>
 				</xsl:attribute>
-				<xsl:attribute name="style">color: <xsl:value-of select="/data/index-status/entry[@id = $node/status/item/@id]/textcolor" />;</xsl:attribute>
-				<xsl:value-of select="$node/status/item" />
+				<xsl:attribute name="style">color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/textcolor" />;</xsl:attribute>
+				<xsl:value-of select="./status/item" />
 			</a>
 		</li>
 		<li class="priority">
 			<span>Priority</span>
-			<a href="?priority={$node/priority/item/@id}">
+			<a href="?priority={./priority/item/@id}">
 				<xsl:attribute name="href">
 					<xsl:call-template name="toggle-get-param">
 						<xsl:with-param name="param" select="'priority'" />
-						<xsl:with-param name="value" select="$node/priority/item/@id" />
+						<xsl:with-param name="value" select="./priority/item/@id" />
 					</xsl:call-template>
 				</xsl:attribute>
-				<xsl:attribute name="style">color: <xsl:value-of select="/data/index-priority/entry[@id = $node/priority/item/@id]/color" />;</xsl:attribute>
-				<xsl:value-of select="$node/priority/item" />
+				<xsl:attribute name="style">color: <xsl:value-of select="/data/index-priority/entry[@id = current()/priority/item/@id]/color" />;</xsl:attribute>
+				<xsl:value-of select="./priority/item" />
 			</a>
 		</li>
 		<li class="category auxiliary">
 			<span>Category</span>
-			<a href="?category={$node/category/item/@id}">
+			<a href="?category={./category/item/@id}">
 				<xsl:attribute name="href">
 					<xsl:call-template name="toggle-get-param">
 						<xsl:with-param name="param" select="'category'" />
-						<xsl:with-param name="value" select="$node/category/item/@id" />
+						<xsl:with-param name="value" select="./category/item/@id" />
 					</xsl:call-template>
 				</xsl:attribute>
-				<xsl:if test="not($node/category/item)">No category</xsl:if>
-				<xsl:value-of select="$node/category/item" />
+				<xsl:if test="not(./category/item)">No category</xsl:if>
+				<xsl:value-of select="./category/item" />
 			</a>
 		</li>
 		<li class="milestone auxiliary">
 			<span>Milestone</span>
-			<a href="?milestone={$node/milestone/item/@id}">
+			<a href="?milestone={./milestone/item/@id}">
 				<xsl:attribute name="href">
 					<xsl:call-template name="toggle-get-param">
 						<xsl:with-param name="param" select="'milestone'" />
-						<xsl:with-param name="value" select="$node/milestone/item/@id" />
+						<xsl:with-param name="value" select="./milestone/item/@id" />
 					</xsl:call-template>
 				</xsl:attribute>
-				<xsl:if test="not($node/milestone/item)">No milestone</xsl:if>
-				<xsl:value-of select="$node/milestone/item" />
+				<xsl:if test="not(./milestone/item)">No milestone</xsl:if>
+				<xsl:value-of select="./milestone/item" />
 			</a>
 		</li>
 		<li class="assignee auxiliary">
 			<span>Assignee</span>
-			<a href="?assignee={$node/assignee/item/@id}">
+			<a href="?assignee={./assignee/item/@id}">
 				<xsl:attribute name="href">
 					<xsl:call-template name="toggle-get-param">
 						<xsl:with-param name="param" select="'assignee'" />
-						<xsl:with-param name="value" select="$node/assignee/item/@id" />
+						<xsl:with-param name="value" select="./assignee/item/@id" />
 					</xsl:call-template>
 				</xsl:attribute>
-				<xsl:if test="not($node/assignee/item)">No Assignee</xsl:if>
-				<xsl:value-of select="$node/assignee/item" />
+				<xsl:if test="not(./assignee/item)">No Assignee</xsl:if>
+				<xsl:value-of select="./assignee/item" />
 			</a>
 		</li>
 		<li class="comments auxiliary">
 			<a href="{$root}/issue/{@id}">
-				<xsl:value-of select="$node/@messages" /><xsl:text> </xsl:text>
+				<xsl:value-of select="./@messages" /><xsl:text> </xsl:text>
 				<xsl:call-template name="pluralize">
-					<xsl:with-param name="number" select="$node/@messages" />
+					<xsl:with-param name="number" select="./@messages" />
 					<xsl:with-param name="term" select="'Comment'" />
 				</xsl:call-template>
 			</a>

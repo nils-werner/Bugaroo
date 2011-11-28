@@ -64,9 +64,7 @@
 
 <xsl:template match="project-project-issues-filtered/entry">
 	<li><a href="{$root}/issue/{@id}/"><xsl:value-of select="title" /></a>
-		<xsl:call-template name="attribute-list-table">
-			<xsl:with-param name="node" select="." />
-		</xsl:call-template>
+		<xsl:apply-templates select="." mode="attribute-list-table" />
 	</li>
 </xsl:template>
 
