@@ -13,7 +13,7 @@
 	encoding="UTF-8"
 	indent="yes" />
 	
-<xsl:variable name="user-id" select="'68'"/>
+<xsl:variable name="member-id" select="'68'"/>
 
 <xsl:template match="data">
 	<h2>My Projects</h2>
