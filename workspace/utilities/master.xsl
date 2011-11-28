@@ -85,7 +85,7 @@
 			</p> -->
 			<div id="content">
 				<div id="sidebar">
-					<a id="create-issue" href="{$root}/issue/new/?project={/data/project-project/entry/@id}{/data/issue-issue/entry/project/item/@id}{/data/params/url-project}">Create Issue</a>
+					<a id="create-issue" href="{$root}/{/data/project-project/entry/title/@handle}{/data/issue-issue/entry/project/item/@handle}{/data/params/url-project}/new/">Create Issue</a>
 					<xsl:apply-templates mode="sidebar"/>				
 				</div>
 				<xsl:apply-templates/>
