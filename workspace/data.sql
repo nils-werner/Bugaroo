@@ -1103,7 +1103,7 @@ CREATE TABLE `sym_extensions` (
   `version` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=105 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_extensions` ***
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (75, 'export_ensemble', 'enabled', 1.16);
@@ -1119,6 +1119,7 @@ INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (100, 'g
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (103, 'dump_db', 'enabled', 1.08);
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (104, 'members', 'enabled', '1.1.1');
 INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (101, 'xssfilter', 'enabled', 1.1);
+INSERT INTO `sym_extensions` (`id`, `name`, `status`, `version`) VALUES (105, 'url_router', 'enabled', 1.2);
 
 -- *** STRUCTURE: `sym_extensions_delegates` ***
 DROP TABLE IF EXISTS `sym_extensions_delegates`;
@@ -1132,7 +1133,7 @@ CREATE TABLE `sym_extensions_delegates` (
   KEY `extension_id` (`extension_id`),
   KEY `page` (`page`),
   KEY `delegate` (`delegate`)
-) ENGINE=MyISAM AUTO_INCREMENT=180 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=184 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_extensions_delegates` ***
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (141, 101, '/blueprints/events/new/', 'AppendEventFilter', 'appendEventFilter');
@@ -1169,6 +1170,10 @@ INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (171, 104, '/frontend/', 'FrontendParamsResolve', 'addMemberDetailsToPageParams');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (170, 104, '/frontend/', 'FrontendPageResolved', 'checkFrontendPagePermissions');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (179, 104, '/blueprints/events/edit/', 'AppendEventFilter', 'appendFilter');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (180, 105, '/frontend/', 'FrontendPrePageResolve', 'frontendPrePageResolve');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (181, 105, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'addCustomPreferenceFieldsets');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (182, 105, '/system/preferences/', 'Save', 'save');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (183, 105, '/backend/', 'InitaliseAdminPageHead', 'initaliseAdminPageHead');
 
 -- *** STRUCTURE: `sym_fields` ***
 DROP TABLE IF EXISTS `sym_fields`;
@@ -1706,3 +1711,19 @@ INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_secti
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (290, 8, 26, 15, 100, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (291, 8, 26, 15, 101, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (292, 12, 37, 15, 102, 'no');
+
+-- *** STRUCTURE: `sym_url_router` ***
+DROP TABLE IF EXISTS `sym_url_router`;
+CREATE TABLE `sym_url_router` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `from` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `to` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `type` enum('route','redirect') COLLATE utf8_unicode_ci DEFAULT 'route',
+  `http301` enum('yes','no') COLLATE utf8_unicode_ci DEFAULT 'no',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- *** DATA: `sym_url_router` ***
+INSERT INTO `sym_url_router` (`id`, `from`, `to`, `type`, `http301`) VALUES (20, ':project/:issue', '/issue/$2', 'route', 'no');
+INSERT INTO `sym_url_router` (`id`, `from`, `to`, `type`, `http301`) VALUES (21, ':project/new', '/issue/new/?project=$1', 'route', 'no');
+INSERT INTO `sym_url_router` (`id`, `from`, `to`, `type`, `http301`) VALUES (22, ':project', '/project/$1', 'route', 'no');
