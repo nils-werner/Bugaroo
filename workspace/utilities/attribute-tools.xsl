@@ -223,7 +223,7 @@
 	</form>
 </xsl:template>
 
-<xsl:template match="index-users | index-category | index-priority | index-milestone | index-status | index-assignee" mode="select">
+<xsl:template match="index-users | index-category | index-priority | index-status" mode="select">
 	<xsl:param name="field" select="substring-after(name(),'index-')" />
 	<xsl:param name="label" select="section" />
 	<xsl:param name="issue-item" />
@@ -231,14 +231,37 @@
 	
 	<label><xsl:value-of select="$label" />
 		<select name="messages[{$field}]">
-			<xsl:apply-templates select="
-				entry[
-					(name(current()) = 'index-milestone' and (project/item/@id = $issue-item/project/item/@id or @id = /data/index-milestone/entry[none = 'Yes']/@id))
-					 or 
-					(name(current()) = 'index-assignee' and (@id = /data/index-projects/entry[@id = $issue-item/project/item/@id]/*[name() = 'administrators' or name() = 'contributors']/item/@id or none = 'Yes'))
-					or
-					(name(current()) != 'index-milestone' and name(current()) != 'index-assignee')
-					]" mode="option-tag">
+			<xsl:apply-templates select="entry" mode="option-tag">
+				<xsl:with-param name="selected-value" select="$selected-value" />
+			</xsl:apply-templates>
+		</select>
+	</label>
+</xsl:template>
+
+<xsl:template match="index-assignee" mode="select">
+	<xsl:param name="field" select="substring-after(name(),'index-')" />
+	<xsl:param name="label" select="section" />
+	<xsl:param name="issue-item" />
+	<xsl:param name="selected-value" select="$issue-item/*[name() = $field]/item/@id" />
+	
+	<label><xsl:value-of select="$label" />
+		<select name="messages[{$field}]">
+			<xsl:apply-templates select="entry[@id = /data/index-projects/entry[@id = $issue-item/project/item/@id]/*[name() = 'administrators' or name() = 'contributors']/item/@id or none = 'Yes']" mode="option-tag">
+				<xsl:with-param name="selected-value" select="$selected-value" />
+			</xsl:apply-templates>
+		</select>
+	</label>
+</xsl:template>
+
+<xsl:template match="index-milestone" mode="select">
+	<xsl:param name="field" select="substring-after(name(),'index-')" />
+	<xsl:param name="label" select="section" />
+	<xsl:param name="issue-item" />
+	<xsl:param name="selected-value" select="$issue-item/*[name() = $field]/item/@id" />
+	
+	<label><xsl:value-of select="$label" />
+		<select name="messages[{$field}]">
+			<xsl:apply-templates select="entry[project/item/@id = $issue-item/project/item/@id or @id = /data/index-milestone/entry[none = 'Yes']/@id]" mode="option-tag">
 				<xsl:with-param name="selected-value" select="$selected-value" />
 			</xsl:apply-templates>
 		</select>
