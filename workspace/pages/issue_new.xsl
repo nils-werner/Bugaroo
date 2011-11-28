@@ -14,6 +14,7 @@
 	encoding="UTF-8"
 	indent="yes" />
 
+
 <xsl:template match="data">
 	<h2>Create New Issue</h2>
 	
@@ -72,6 +73,11 @@
 	</form>
 </xsl:template>
 
+
+
+
+
+
 <xsl:template match="data" mode="sidebar">
 	<h2>Issue Stats</h2>
 	<h3>Activity</h3>
@@ -89,4 +95,6 @@
 		<xsl:with-param name="notcolor" select="'E6E6E6'" />
 	</xsl:call-template>
 </xsl:template>
+
+
 </xsl:stylesheet>

@@ -7,6 +7,8 @@
 <xsl:strip-space elements="@"/> 
 
 
+
+
 <xsl:template match="index-users | index-category | index-priority | index-status" mode="select">
 	<xsl:param name="field" select="substring-after(name(),'index-')" />
 	<xsl:param name="label" select="section" />
@@ -21,6 +23,11 @@
 		</select>
 	</label>
 </xsl:template>
+
+
+
+
+
 
 <xsl:template match="index-assignee" mode="select">
 	<xsl:param name="field" select="substring-after(name(),'index-')" />
@@ -37,6 +44,11 @@
 	</label>
 </xsl:template>
 
+
+
+
+
+
 <xsl:template match="index-milestone" mode="select">
 	<xsl:param name="field" select="substring-after(name(),'index-')" />
 	<xsl:param name="label" select="section" />
@@ -51,6 +63,11 @@
 		</select>
 	</label>
 </xsl:template>
+
+
+
+
+
 
 <xsl:template match="entry" mode="option-tag">
 	<xsl:param name="selected-value" select="''" />
@@ -68,6 +85,11 @@
 		<xsl:value-of select="title | name" />
 	</option>
 </xsl:template>
+
+
+
+
+
 
 <xsl:template match="index-users | index-category | index-priority | index-milestone | index-status | index-assignee" mode="links">
 	<xsl:param name="field" select="substring-after(name(),'index-')" />
@@ -93,6 +115,11 @@
 	</span>
 </xsl:template>
 
+
+
+
+
+
 <xsl:template match="entry" mode="link">
 	<xsl:param name="name" select="''" />
 	<xsl:param name="selected-value" select="''" />
@@ -116,6 +143,11 @@
 	</a>
 </xsl:template>
 
+
+
+
+
+
 <xsl:template name="toggle-get-param">
 	<xsl:param name="param" />
 	<xsl:param name="value" />
@@ -135,6 +167,11 @@
 	</xsl:choose>	
 </xsl:template>
 
+
+
+
+
+
 <xsl:template name="add-get-param">
 	<xsl:param name="param" />
 	<xsl:param name="value" />
@@ -153,6 +190,11 @@
 	</xsl:for-each>
 	<xsl:if test="not(/data/params/*[name() = concat('url-',$param)])"><xsl:if test="count(/data/params/*[substring(name(),1,4) = 'url-']) &gt; 0">&amp;</xsl:if><xsl:value-of select="concat($param,'=',$value)" /></xsl:if>
 </xsl:template>
+
+
+
+
+
 
 <xsl:template name="remove-get-param">
 	<xsl:param name="param" />
@@ -192,5 +234,7 @@
 		<xsl:if test="$new-value != '' and $new-value != ',' and position() != last()">&amp;</xsl:if>
 	</xsl:for-each>
 </xsl:template>
+
+
 
 </xsl:stylesheet>

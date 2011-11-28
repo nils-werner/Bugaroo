@@ -14,6 +14,8 @@
 	encoding="UTF-8"
 	indent="yes" />
 
+
+
 <xsl:template match="data">
 	<h2><xsl:value-of select="project-project/entry/title" /></h2>
 	
@@ -21,6 +23,11 @@
 	
 	<xsl:apply-templates select="project-project-issues-filtered" />
 </xsl:template>
+
+
+
+
+
 
 <xsl:template match="data" mode="sidebar">
 
@@ -82,6 +89,13 @@
 	<h3>Milestones</h3>
 	<xsl:apply-templates select="project-project-milestones" />
 </xsl:template>
+
+
+
+
+
+
+
 
 <xsl:template match="project-project-issues-filtered/entry" mode="attribute-list-table">
 	<ul>
@@ -164,6 +178,11 @@
 	</ul>
 </xsl:template>
 
+
+
+
+
+
 <xsl:template match="project-project-issues-filtered">
 	<ul id="project">
 		<xsl:apply-templates select="entry"/>
@@ -173,13 +192,22 @@
 	</ul>
 </xsl:template>
 
+
+
+
+
+
 <xsl:template match="project-project-issues-filtered/entry">
 	<li><a href="{$root}/issue/{@id}/"><xsl:value-of select="title" /></a>
 		<xsl:apply-templates select="." mode="attribute-list-table" />
 	</li>
 </xsl:template>
 
-<!-- STATUS BAR -->
+
+
+
+
+
 
 <xsl:template match="index-status">
 	<ul>
@@ -189,6 +217,11 @@
 	</ul>
 </xsl:template>
 
+
+
+
+
+
 <xsl:template match="index-status/entry">
 	<xsl:param name="issues" />
 	
@@ -197,16 +230,27 @@
 	</li>
 </xsl:template>
 
+
+
+
+
+
 <xsl:template match="project-project-milestones">
 	<ul>
 		<xsl:apply-templates select="entry" />
 	</ul>
 </xsl:template>
 
+
+
+
+
+
 <xsl:template match="project-project-milestones/entry">
 	<li class="{status/item/@handle}">
 		<a href="?milestone={@id}"><xsl:value-of select="title" /></a>
 	</li>
 </xsl:template>
+
 
 </xsl:stylesheet>

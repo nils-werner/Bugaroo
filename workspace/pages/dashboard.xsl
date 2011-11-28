@@ -15,10 +15,18 @@
 	
 <xsl:variable name="member-id" select="'68'"/>
 
+
+
+
 <xsl:template match="data">
 	<h2>My Projects</h2>
 	<xsl:apply-templates select="dashboard-projects" />
 </xsl:template>
+
+
+
+
+
 
 <xsl:template match="data" mode="sidebar">
 	<h2>Personal Stats</h2>
@@ -42,7 +50,12 @@
 	</ul>
 </xsl:template>
 
-<!-- MAIN CONTENT -->
+
+
+
+
+
+
 
 <xsl:template match="dashboard-projects">
 	<h3>Starred projects</h3>
@@ -60,6 +73,11 @@
 		</xsl:if>
 	</ul>
 </xsl:template>
+
+
+
+
+
 
 <xsl:template match="dashboard-projects/entry" mode="detailed">
 	
@@ -86,11 +104,21 @@
 	</li>
 </xsl:template>
 
+
+
+
+
+
 <xsl:template match="dashboard-projects/entry">
 	
 	<li class="{status/item/@handle}"><a href="{$root}/project/{title/@handle}/?assignee={$member-id}"><xsl:value-of select="title" /></a> <a class="all" href="{$root}/project/{title/@handle}/">all issues</a>
 	</li>
 </xsl:template>
+
+
+
+
+
 
 <xsl:template match="dashboard-projects-milestones/entry">
 	<li class="{status/item/@handle}"><a href="{$root}/project/{project/item/@handle}/?milestone={@id}&amp;assignee={$member-id}"><xsl:value-of select="title" /></a> <a  class="all" href="{$root}/project/{project/item/@handle}/?milestone={@id}">all issues</a>
@@ -112,6 +140,11 @@
 	</li>
 </xsl:template>
 
+
+
+
+
+
 <xsl:template match="index-status/entry">
 	<xsl:param name="issues" />
 	
@@ -119,6 +152,9 @@
 		<xsl:value-of select="title" />: <xsl:value-of select="count($issues[status/item/@id = current()/@id])" />
 	</li>
 </xsl:template>
+
+
+
 
 </xsl:stylesheet>
 

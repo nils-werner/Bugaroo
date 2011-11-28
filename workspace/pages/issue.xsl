@@ -14,6 +14,8 @@
 	encoding="UTF-8"
 	indent="yes" />
 
+
+
 <xsl:template match="data">
 	<h2>#<xsl:value-of select="issue-issue/entry/@id"/><xsl:text> </xsl:text><a href="."><xsl:value-of select="issue-issue/entry/title" /></a></h2>
 
@@ -81,6 +83,10 @@
 	</form>
 </xsl:template>
 
+
+
+
+
 <xsl:template match="data" mode="sidebar">
 	<h2>Issue Stats</h2>
 	<h3>Activity</h3>
@@ -103,7 +109,15 @@
 	</xsl:call-template>
 </xsl:template>
 
+
+
+
+
 <xsl:template match="data" mode="bodyclass">issue</xsl:template>
+
+
+
+
 
 <xsl:template match="issue-issue/entry">
 	<xsl:apply-templates select="." mode="attribute-list-infobar" />
@@ -144,6 +158,11 @@
 	<hr />
 </xsl:template>
 
+
+
+
+
+
 <xsl:template match="priority | category | assignee | milestone | status">
 		
 	<xsl:if test="not(../preceding-sibling::entry) or ../preceding-sibling::entry[1]/*[name() = name(current())]/item != current()/item">
@@ -158,6 +177,11 @@
 		</xsl:choose>
 	</xsl:if>
 </xsl:template>
+
+
+
+
+
 
 <xsl:template match="issue-issue/entry" mode="attribute-list-infobar">
 	
@@ -186,5 +210,6 @@
 		</li>
 	</ul>
 </xsl:template>
+
 
 </xsl:stylesheet>
