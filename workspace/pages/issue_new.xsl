@@ -55,10 +55,6 @@
 				<label>Attachment
 					<input type="file" name="messages[file]" />
 				</label>
-				
-				<xsl:if test="./@id">
-					<input name="messages[issue]" type="hidden" value="{./@id}" />
-				</xsl:if>
 			</div>
 			
 			<input name="MAX_FILE_SIZE" type="hidden" value="5242880" />
