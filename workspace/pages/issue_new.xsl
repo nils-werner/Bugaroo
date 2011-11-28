@@ -17,9 +17,59 @@
 <xsl:template match="data">
 	<h2>Create New Issue</h2>
 	
-	<xsl:call-template name="update-form">
-		<xsl:with-param name="issue-item" select="." />
-	</xsl:call-template>
+	<xsl:variable name="default-value" select="'- No change -'" />
+
+	<form method="post" action="" enctype="multipart/form-data" id="update-form">
+		<fieldset>
+			<legend>Update Issue</legend>
+			<div id="attributes">
+				<input type="hidden" name="messages[creator]" value="{$member-id}" />
+				
+				<xsl:apply-templates select="/data/index-status" mode="select">
+					<xsl:with-param name="issue-item" select="." />
+					<xsl:with-param name="selected-value" select="./status/item/@id" />
+				</xsl:apply-templates>
+				
+				<xsl:apply-templates select="/data/index-priority" mode="select">
+					<xsl:with-param name="issue-item" select="." />
+					<xsl:with-param name="selected-value" select="./priority/item/@id" />
+				</xsl:apply-templates>
+				
+				<xsl:apply-templates select="/data/index-category" mode="select">
+					<xsl:with-param name="issue-item" select="." />
+					<xsl:with-param name="selected-value" select="./category/item/@id" />
+				</xsl:apply-templates>
+				
+				<xsl:apply-templates select="/data/index-assignee" mode="select">
+					<xsl:with-param name="issue-item" select="." />
+					<xsl:with-param name="selected-value" select="./assignee/item/@id" />
+					<xsl:with-param name="label" select="'Assign to'" />
+				</xsl:apply-templates>
+				
+				<xsl:apply-templates select="/data/index-milestone" mode="select">
+					<xsl:with-param name="issue-item" select="." />
+					<xsl:with-param name="selected-value" select="./milestone/item/@id" />
+				</xsl:apply-templates>
+				
+				<label>Attachment
+					<input type="file" name="messages[file]" />
+				</label>
+				
+				<xsl:if test="./@id">
+					<input name="messages[issue]" type="hidden" value="{./@id}" />
+				</xsl:if>
+			</div>
+			
+			<input name="MAX_FILE_SIZE" type="hidden" value="5242880" />
+			<label>Description
+				<textarea name="messages[description]" rows="15" cols="50"></textarea>
+			</label>
+			<label class="submit">Absenden
+				<input name="action[save-message]" type="submit" value="Submit" />
+			</label>
+		</fieldset>
+		<a class="cancel" href="javascript:history:back()">Cancel and go back</a>
+	</form>
 </xsl:template>
 
 <xsl:template match="data" mode="sidebar">

@@ -157,68 +157,6 @@
 	</p>
 </xsl:template>
 
-<xsl:template name="update-form">
-	<xsl:param name="issue-item" />
-	
-	<xsl:variable name="default-value" select="'- No change -'" />
-
-	<form method="post" action="" enctype="multipart/form-data" id="update-form">
-		<fieldset>
-			<legend>Update Issue</legend>
-			<div id="attributes">
-				<xsl:apply-templates select="/data/index-assignee" mode="select">
-					<xsl:with-param name="issue-item" select="$issue-item" />
-					<xsl:with-param name="field" select="'author'" />
-					<xsl:with-param name="label" select="'Posted by'" />
-				</xsl:apply-templates>
-				
-				<xsl:apply-templates select="/data/index-status" mode="select">
-					<xsl:with-param name="issue-item" select="$issue-item" />
-					<xsl:with-param name="selected-value" select="$issue-item/status/item/@id" />
-				</xsl:apply-templates>
-				
-				<xsl:apply-templates select="/data/index-priority" mode="select">
-					<xsl:with-param name="issue-item" select="$issue-item" />
-					<xsl:with-param name="selected-value" select="$issue-item/priority/item/@id" />
-				</xsl:apply-templates>
-				
-				<xsl:apply-templates select="/data/index-category" mode="select">
-					<xsl:with-param name="issue-item" select="$issue-item" />
-					<xsl:with-param name="selected-value" select="$issue-item/category/item/@id" />
-				</xsl:apply-templates>
-				
-				<xsl:apply-templates select="/data/index-assignee" mode="select">
-					<xsl:with-param name="issue-item" select="$issue-item" />
-					<xsl:with-param name="selected-value" select="$issue-item/assignee/item/@id" />
-					<xsl:with-param name="label" select="'Assign to'" />
-				</xsl:apply-templates>
-				
-				<xsl:apply-templates select="/data/index-milestone" mode="select">
-					<xsl:with-param name="issue-item" select="$issue-item" />
-					<xsl:with-param name="selected-value" select="$issue-item/milestone/item/@id" />
-				</xsl:apply-templates>
-				
-				<label>Attachment
-					<input type="file" name="messages[file]" />
-				</label>
-				
-				<xsl:if test="$issue-item/@id">
-					<input name="messages[issue]" type="hidden" value="{$issue-item/@id}" />
-				</xsl:if>
-			</div>
-			
-			<input name="MAX_FILE_SIZE" type="hidden" value="5242880" />
-			<label>Description
-				<textarea name="messages[description]" rows="15" cols="50"></textarea>
-			</label>
-			<label class="submit">Absenden
-				<input name="action[save-message]" type="submit" value="Submit" />
-			</label>
-		</fieldset>
-		<a class="cancel" href="javascript:history:back()">Cancel and go back</a>
-	</form>
-</xsl:template>
-
 <xsl:template match="index-users | index-category | index-priority | index-status" mode="select">
 	<xsl:param name="field" select="substring-after(name(),'index-')" />
 	<xsl:param name="label" select="section" />
