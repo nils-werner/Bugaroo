@@ -37,3 +37,6 @@
 [submodule "extensions/dump_db"]
 	path = extensions/dump_db
 	url = git://github.com/nils-werner/dump_db.git
+[submodule "extensions/url_router"]
+	path = extensions/url_router
+	url = git://github.com/symphonists/url_router.git
