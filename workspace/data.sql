@@ -74,11 +74,11 @@ CREATE TABLE `sym_entries_data_100` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_100` ***
 INSERT INTO `sym_entries_data_100` (`id`, `entry_id`, `relation_id`) VALUES (1, 74, NULL);
-INSERT INTO `sym_entries_data_100` (`id`, `entry_id`, `relation_id`) VALUES (2, 75, 13);
+INSERT INTO `sym_entries_data_100` (`id`, `entry_id`, `relation_id`) VALUES (4, 75, 13);
 
 -- *** STRUCTURE: `sym_entries_data_101` ***
 DROP TABLE IF EXISTS `sym_entries_data_101`;
@@ -89,11 +89,11 @@ CREATE TABLE `sym_entries_data_101` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_101` ***
 INSERT INTO `sym_entries_data_101` (`id`, `entry_id`, `relation_id`) VALUES (1, 74, NULL);
-INSERT INTO `sym_entries_data_101` (`id`, `entry_id`, `relation_id`) VALUES (2, 75, NULL);
+INSERT INTO `sym_entries_data_101` (`id`, `entry_id`, `relation_id`) VALUES (4, 75, NULL);
 
 -- *** STRUCTURE: `sym_entries_data_102` ***
 DROP TABLE IF EXISTS `sym_entries_data_102`;
@@ -104,11 +104,11 @@ CREATE TABLE `sym_entries_data_102` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_102` ***
 INSERT INTO `sym_entries_data_102` (`id`, `entry_id`, `relation_id`) VALUES (1, 74, NULL);
-INSERT INTO `sym_entries_data_102` (`id`, `entry_id`, `relation_id`) VALUES (2, 75, NULL);
+INSERT INTO `sym_entries_data_102` (`id`, `entry_id`, `relation_id`) VALUES (4, 75, NULL);
 
 -- *** STRUCTURE: `sym_entries_data_23` ***
 DROP TABLE IF EXISTS `sym_entries_data_23`;
@@ -159,10 +159,10 @@ CREATE TABLE `sym_entries_data_26` (
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `handle` (`handle`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_26` ***
-INSERT INTO `sym_entries_data_26` (`id`, `entry_id`, `handle`, `value`) VALUES (11, 13, 'minor-project', 'Minor Project');
+INSERT INTO `sym_entries_data_26` (`id`, `entry_id`, `handle`, `value`) VALUES (12, 13, 'minor-project', 'Minor Project');
 INSERT INTO `sym_entries_data_26` (`id`, `entry_id`, `handle`, `value`) VALUES (9, 61, 'bugtracker', 'Bugtracker');
 
 -- *** STRUCTURE: `sym_entries_data_27` ***
@@ -175,10 +175,10 @@ CREATE TABLE `sym_entries_data_27` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
   FULLTEXT KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_27` ***
-INSERT INTO `sym_entries_data_27` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (11, 13, NULL, NULL);
+INSERT INTO `sym_entries_data_27` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (12, 13, NULL, NULL);
 INSERT INTO `sym_entries_data_27` (`id`, `entry_id`, `value`, `value_formatted`) VALUES (9, 61, NULL, NULL);
 
 -- *** STRUCTURE: `sym_entries_data_28` ***
@@ -192,10 +192,10 @@ CREATE TABLE `sym_entries_data_28` (
   KEY `entry_id` (`entry_id`),
   KEY `handle` (`handle`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_28` ***
-INSERT INTO `sym_entries_data_28` (`id`, `entry_id`, `handle`, `value`) VALUES (11, 13, 'active', 'Active');
+INSERT INTO `sym_entries_data_28` (`id`, `entry_id`, `handle`, `value`) VALUES (12, 13, 'active', 'Active');
 INSERT INTO `sym_entries_data_28` (`id`, `entry_id`, `handle`, `value`) VALUES (9, 61, 'active', 'Active');
 
 -- *** STRUCTURE: `sym_entries_data_29` ***
@@ -207,11 +207,10 @@ CREATE TABLE `sym_entries_data_29` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_29` ***
-INSERT INTO `sym_entries_data_29` (`id`, `entry_id`, `relation_id`) VALUES (12, 13, 69);
-INSERT INTO `sym_entries_data_29` (`id`, `entry_id`, `relation_id`) VALUES (13, 13, 70);
+INSERT INTO `sym_entries_data_29` (`id`, `entry_id`, `relation_id`) VALUES (14, 13, 75);
 INSERT INTO `sym_entries_data_29` (`id`, `entry_id`, `relation_id`) VALUES (10, 61, NULL);
 
 -- *** STRUCTURE: `sym_entries_data_30` ***
@@ -223,11 +222,11 @@ CREATE TABLE `sym_entries_data_30` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_30` ***
 INSERT INTO `sym_entries_data_30` (`id`, `entry_id`, `relation_id`) VALUES (10, 61, 68);
-INSERT INTO `sym_entries_data_30` (`id`, `entry_id`, `relation_id`) VALUES (13, 13, 68);
+INSERT INTO `sym_entries_data_30` (`id`, `entry_id`, `relation_id`) VALUES (14, 13, 75);
 
 -- *** STRUCTURE: `sym_entries_data_31` ***
 DROP TABLE IF EXISTS `sym_entries_data_31`;
@@ -347,14 +346,14 @@ CREATE TABLE `sym_entries_data_37` (
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `handle` (`handle`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_37` ***
-INSERT INTO `sym_entries_data_37` (`id`, `entry_id`, `handle`, `value`) VALUES (76, 22, 'symphony-umzug', 'Symphony-Umzug');
-INSERT INTO `sym_entries_data_37` (`id`, `entry_id`, `handle`, `value`) VALUES (75, 31, 'shop', 'Shop');
-INSERT INTO `sym_entries_data_37` (`id`, `entry_id`, `handle`, `value`) VALUES (74, 32, 'daten-importieren', 'Daten importieren');
-INSERT INTO `sym_entries_data_37` (`id`, `entry_id`, `handle`, `value`) VALUES (73, 58, 'test', 'Test');
-INSERT INTO `sym_entries_data_37` (`id`, `entry_id`, `handle`, `value`) VALUES (72, 62, 'bugtracker-test', 'Bugtracker Test');
+INSERT INTO `sym_entries_data_37` (`id`, `entry_id`, `handle`, `value`) VALUES (81, 22, 'symphony-umzug', 'Symphony-Umzug');
+INSERT INTO `sym_entries_data_37` (`id`, `entry_id`, `handle`, `value`) VALUES (80, 31, 'shop', 'Shop');
+INSERT INTO `sym_entries_data_37` (`id`, `entry_id`, `handle`, `value`) VALUES (84, 32, 'daten-importieren', 'Daten importieren');
+INSERT INTO `sym_entries_data_37` (`id`, `entry_id`, `handle`, `value`) VALUES (83, 58, 'test', 'Test');
+INSERT INTO `sym_entries_data_37` (`id`, `entry_id`, `handle`, `value`) VALUES (82, 62, 'bugtracker-test', 'Bugtracker Test');
 
 -- *** STRUCTURE: `sym_entries_data_39` ***
 DROP TABLE IF EXISTS `sym_entries_data_39`;
@@ -365,14 +364,14 @@ CREATE TABLE `sym_entries_data_39` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_39` ***
-INSERT INTO `sym_entries_data_39` (`id`, `entry_id`, `relation_id`) VALUES (76, 22, 13);
-INSERT INTO `sym_entries_data_39` (`id`, `entry_id`, `relation_id`) VALUES (75, 31, 13);
-INSERT INTO `sym_entries_data_39` (`id`, `entry_id`, `relation_id`) VALUES (74, 32, 13);
-INSERT INTO `sym_entries_data_39` (`id`, `entry_id`, `relation_id`) VALUES (73, 58, 13);
-INSERT INTO `sym_entries_data_39` (`id`, `entry_id`, `relation_id`) VALUES (72, 62, 61);
+INSERT INTO `sym_entries_data_39` (`id`, `entry_id`, `relation_id`) VALUES (81, 22, 13);
+INSERT INTO `sym_entries_data_39` (`id`, `entry_id`, `relation_id`) VALUES (80, 31, 13);
+INSERT INTO `sym_entries_data_39` (`id`, `entry_id`, `relation_id`) VALUES (84, 32, 13);
+INSERT INTO `sym_entries_data_39` (`id`, `entry_id`, `relation_id`) VALUES (83, 58, 13);
+INSERT INTO `sym_entries_data_39` (`id`, `entry_id`, `relation_id`) VALUES (82, 62, 61);
 
 -- *** STRUCTURE: `sym_entries_data_40` ***
 DROP TABLE IF EXISTS `sym_entries_data_40`;
@@ -383,14 +382,14 @@ CREATE TABLE `sym_entries_data_40` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_40` ***
-INSERT INTO `sym_entries_data_40` (`id`, `entry_id`, `relation_id`) VALUES (76, 22, 68);
-INSERT INTO `sym_entries_data_40` (`id`, `entry_id`, `relation_id`) VALUES (75, 31, 68);
-INSERT INTO `sym_entries_data_40` (`id`, `entry_id`, `relation_id`) VALUES (74, 32, 69);
-INSERT INTO `sym_entries_data_40` (`id`, `entry_id`, `relation_id`) VALUES (73, 58, 70);
-INSERT INTO `sym_entries_data_40` (`id`, `entry_id`, `relation_id`) VALUES (72, 62, 69);
+INSERT INTO `sym_entries_data_40` (`id`, `entry_id`, `relation_id`) VALUES (81, 22, 68);
+INSERT INTO `sym_entries_data_40` (`id`, `entry_id`, `relation_id`) VALUES (80, 31, 68);
+INSERT INTO `sym_entries_data_40` (`id`, `entry_id`, `relation_id`) VALUES (84, 32, 69);
+INSERT INTO `sym_entries_data_40` (`id`, `entry_id`, `relation_id`) VALUES (83, 58, 70);
+INSERT INTO `sym_entries_data_40` (`id`, `entry_id`, `relation_id`) VALUES (82, 62, 69);
 
 -- *** STRUCTURE: `sym_entries_data_41` ***
 DROP TABLE IF EXISTS `sym_entries_data_41`;
@@ -401,14 +400,14 @@ CREATE TABLE `sym_entries_data_41` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=83 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_41` ***
-INSERT INTO `sym_entries_data_41` (`id`, `entry_id`, `relation_id`) VALUES (74, 22, 15);
-INSERT INTO `sym_entries_data_41` (`id`, `entry_id`, `relation_id`) VALUES (73, 31, 18);
-INSERT INTO `sym_entries_data_41` (`id`, `entry_id`, `relation_id`) VALUES (72, 32, 15);
-INSERT INTO `sym_entries_data_41` (`id`, `entry_id`, `relation_id`) VALUES (71, 58, 16);
-INSERT INTO `sym_entries_data_41` (`id`, `entry_id`, `relation_id`) VALUES (70, 62, 16);
+INSERT INTO `sym_entries_data_41` (`id`, `entry_id`, `relation_id`) VALUES (79, 22, 15);
+INSERT INTO `sym_entries_data_41` (`id`, `entry_id`, `relation_id`) VALUES (78, 31, 18);
+INSERT INTO `sym_entries_data_41` (`id`, `entry_id`, `relation_id`) VALUES (82, 32, 15);
+INSERT INTO `sym_entries_data_41` (`id`, `entry_id`, `relation_id`) VALUES (81, 58, 16);
+INSERT INTO `sym_entries_data_41` (`id`, `entry_id`, `relation_id`) VALUES (80, 62, 16);
 
 -- *** STRUCTURE: `sym_entries_data_42` ***
 DROP TABLE IF EXISTS `sym_entries_data_42`;
@@ -419,14 +418,14 @@ CREATE TABLE `sym_entries_data_42` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=83 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_42` ***
-INSERT INTO `sym_entries_data_42` (`id`, `entry_id`, `relation_id`) VALUES (74, 22, 20);
-INSERT INTO `sym_entries_data_42` (`id`, `entry_id`, `relation_id`) VALUES (73, 31, 20);
-INSERT INTO `sym_entries_data_42` (`id`, `entry_id`, `relation_id`) VALUES (72, 32, 20);
-INSERT INTO `sym_entries_data_42` (`id`, `entry_id`, `relation_id`) VALUES (71, 58, 72);
-INSERT INTO `sym_entries_data_42` (`id`, `entry_id`, `relation_id`) VALUES (70, 62, 72);
+INSERT INTO `sym_entries_data_42` (`id`, `entry_id`, `relation_id`) VALUES (79, 22, 20);
+INSERT INTO `sym_entries_data_42` (`id`, `entry_id`, `relation_id`) VALUES (78, 31, 20);
+INSERT INTO `sym_entries_data_42` (`id`, `entry_id`, `relation_id`) VALUES (82, 32, 20);
+INSERT INTO `sym_entries_data_42` (`id`, `entry_id`, `relation_id`) VALUES (81, 58, 72);
+INSERT INTO `sym_entries_data_42` (`id`, `entry_id`, `relation_id`) VALUES (80, 62, 72);
 
 -- *** STRUCTURE: `sym_entries_data_43` ***
 DROP TABLE IF EXISTS `sym_entries_data_43`;
@@ -437,14 +436,14 @@ CREATE TABLE `sym_entries_data_43` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_43` ***
-INSERT INTO `sym_entries_data_43` (`id`, `entry_id`, `relation_id`) VALUES (71, 22, 71);
-INSERT INTO `sym_entries_data_43` (`id`, `entry_id`, `relation_id`) VALUES (70, 31, 71);
-INSERT INTO `sym_entries_data_43` (`id`, `entry_id`, `relation_id`) VALUES (69, 32, 68);
-INSERT INTO `sym_entries_data_43` (`id`, `entry_id`, `relation_id`) VALUES (68, 58, 71);
-INSERT INTO `sym_entries_data_43` (`id`, `entry_id`, `relation_id`) VALUES (67, 62, 71);
+INSERT INTO `sym_entries_data_43` (`id`, `entry_id`, `relation_id`) VALUES (76, 22, 74);
+INSERT INTO `sym_entries_data_43` (`id`, `entry_id`, `relation_id`) VALUES (75, 31, 74);
+INSERT INTO `sym_entries_data_43` (`id`, `entry_id`, `relation_id`) VALUES (79, 32, 75);
+INSERT INTO `sym_entries_data_43` (`id`, `entry_id`, `relation_id`) VALUES (78, 58, 75);
+INSERT INTO `sym_entries_data_43` (`id`, `entry_id`, `relation_id`) VALUES (77, 62, 75);
 
 -- *** STRUCTURE: `sym_entries_data_44` ***
 DROP TABLE IF EXISTS `sym_entries_data_44`;
@@ -455,14 +454,14 @@ CREATE TABLE `sym_entries_data_44` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_44` ***
-INSERT INTO `sym_entries_data_44` (`id`, `entry_id`, `relation_id`) VALUES (71, 22, 33);
-INSERT INTO `sym_entries_data_44` (`id`, `entry_id`, `relation_id`) VALUES (70, 31, 14);
-INSERT INTO `sym_entries_data_44` (`id`, `entry_id`, `relation_id`) VALUES (69, 32, 14);
-INSERT INTO `sym_entries_data_44` (`id`, `entry_id`, `relation_id`) VALUES (68, 58, 73);
-INSERT INTO `sym_entries_data_44` (`id`, `entry_id`, `relation_id`) VALUES (67, 62, 73);
+INSERT INTO `sym_entries_data_44` (`id`, `entry_id`, `relation_id`) VALUES (76, 22, 33);
+INSERT INTO `sym_entries_data_44` (`id`, `entry_id`, `relation_id`) VALUES (75, 31, 14);
+INSERT INTO `sym_entries_data_44` (`id`, `entry_id`, `relation_id`) VALUES (79, 32, 14);
+INSERT INTO `sym_entries_data_44` (`id`, `entry_id`, `relation_id`) VALUES (78, 58, 73);
+INSERT INTO `sym_entries_data_44` (`id`, `entry_id`, `relation_id`) VALUES (77, 62, 73);
 
 -- *** STRUCTURE: `sym_entries_data_46` ***
 DROP TABLE IF EXISTS `sym_entries_data_46`;
@@ -671,14 +670,14 @@ CREATE TABLE `sym_entries_data_58` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_58` ***
-INSERT INTO `sym_entries_data_58` (`id`, `entry_id`, `relation_id`) VALUES (66, 22, 29);
-INSERT INTO `sym_entries_data_58` (`id`, `entry_id`, `relation_id`) VALUES (65, 31, 57);
-INSERT INTO `sym_entries_data_58` (`id`, `entry_id`, `relation_id`) VALUES (64, 32, 28);
-INSERT INTO `sym_entries_data_58` (`id`, `entry_id`, `relation_id`) VALUES (63, 58, 29);
-INSERT INTO `sym_entries_data_58` (`id`, `entry_id`, `relation_id`) VALUES (62, 62, 28);
+INSERT INTO `sym_entries_data_58` (`id`, `entry_id`, `relation_id`) VALUES (71, 22, 29);
+INSERT INTO `sym_entries_data_58` (`id`, `entry_id`, `relation_id`) VALUES (70, 31, 57);
+INSERT INTO `sym_entries_data_58` (`id`, `entry_id`, `relation_id`) VALUES (74, 32, 28);
+INSERT INTO `sym_entries_data_58` (`id`, `entry_id`, `relation_id`) VALUES (73, 58, 29);
+INSERT INTO `sym_entries_data_58` (`id`, `entry_id`, `relation_id`) VALUES (72, 62, 28);
 
 -- *** STRUCTURE: `sym_entries_data_59` ***
 DROP TABLE IF EXISTS `sym_entries_data_59`;
@@ -831,14 +830,14 @@ CREATE TABLE `sym_entries_data_67` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_67` ***
-INSERT INTO `sym_entries_data_67` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (52, 32, '2010-02-06T17:25:00+01:00', 1265473500, 1265473500);
-INSERT INTO `sym_entries_data_67` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (53, 31, '2010-02-02T17:26:00+01:00', 1265127960, 1265127960);
-INSERT INTO `sym_entries_data_67` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (54, 22, '2010-02-01T17:26:00+01:00', 1265041560, 1265041560);
-INSERT INTO `sym_entries_data_67` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (51, 58, '2010-02-08T01:17:00+01:00', 1265588220, 1265588220);
-INSERT INTO `sym_entries_data_67` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (50, 62, '2010-02-08T16:27:00+01:00', 1265642820, 1265642820);
+INSERT INTO `sym_entries_data_67` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (62, 32, '2010-02-06T17:25:00+01:00', 1265473500, 1265473500);
+INSERT INTO `sym_entries_data_67` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (58, 31, '2010-02-02T17:26:00+01:00', 1265127960, 1265127960);
+INSERT INTO `sym_entries_data_67` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (59, 22, '2010-02-01T17:26:00+01:00', 1265041560, 1265041560);
+INSERT INTO `sym_entries_data_67` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (61, 58, '2010-02-08T01:17:00+01:00', 1265588220, 1265588220);
+INSERT INTO `sym_entries_data_67` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (60, 62, '2010-02-08T16:27:00+01:00', 1265642820, 1265642820);
 
 -- *** STRUCTURE: `sym_entries_data_68` ***
 DROP TABLE IF EXISTS `sym_entries_data_68`;
@@ -964,14 +963,14 @@ CREATE TABLE `sym_entries_data_74` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_74` ***
-INSERT INTO `sym_entries_data_74` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (28, 32, '2010-02-07T18:32:00+01:00', 1265563920, 1265563920);
-INSERT INTO `sym_entries_data_74` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (29, 31, '2010-02-07T18:32:00+01:00', 1265563920, 1265563920);
-INSERT INTO `sym_entries_data_74` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (30, 22, '2010-02-07T18:32:00+01:00', 1265563920, 1265563920);
-INSERT INTO `sym_entries_data_74` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (27, 58, '2010-02-08T01:17:00+01:00', 1265588220, 1265588220);
-INSERT INTO `sym_entries_data_74` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (26, 62, '2010-02-08T16:27:00+01:00', 1265642820, 1265642820);
+INSERT INTO `sym_entries_data_74` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (38, 32, '2010-02-07T18:32:00+01:00', 1265563920, 1265563920);
+INSERT INTO `sym_entries_data_74` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (34, 31, '2010-02-07T18:32:00+01:00', 1265563920, 1265563920);
+INSERT INTO `sym_entries_data_74` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (35, 22, '2010-02-07T18:32:00+01:00', 1265563920, 1265563920);
+INSERT INTO `sym_entries_data_74` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (37, 58, '2010-02-08T01:17:00+01:00', 1265588220, 1265588220);
+INSERT INTO `sym_entries_data_74` (`id`, `entry_id`, `value`, `local`, `gmt`) VALUES (36, 62, '2010-02-08T16:27:00+01:00', 1265642820, 1265642820);
 
 -- *** STRUCTURE: `sym_entries_data_75` ***
 DROP TABLE IF EXISTS `sym_entries_data_75`;
@@ -1001,10 +1000,10 @@ CREATE TABLE `sym_entries_data_76` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_76` ***
-INSERT INTO `sym_entries_data_76` (`id`, `entry_id`, `value`) VALUES (10, 13, 2);
+INSERT INTO `sym_entries_data_76` (`id`, `entry_id`, `value`) VALUES (11, 13, 2);
 INSERT INTO `sym_entries_data_76` (`id`, `entry_id`, `value`) VALUES (8, 61, 3);
 
 -- *** STRUCTURE: `sym_entries_data_82` ***
@@ -1054,14 +1053,14 @@ CREATE TABLE `sym_entries_data_84` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `sym_entries_data_84` ***
-INSERT INTO `sym_entries_data_84` (`id`, `entry_id`, `relation_id`) VALUES (1, 62, 69);
-INSERT INTO `sym_entries_data_84` (`id`, `entry_id`, `relation_id`) VALUES (2, 58, 70);
-INSERT INTO `sym_entries_data_84` (`id`, `entry_id`, `relation_id`) VALUES (3, 32, 68);
-INSERT INTO `sym_entries_data_84` (`id`, `entry_id`, `relation_id`) VALUES (4, 31, 68);
-INSERT INTO `sym_entries_data_84` (`id`, `entry_id`, `relation_id`) VALUES (5, 22, 68);
+INSERT INTO `sym_entries_data_84` (`id`, `entry_id`, `relation_id`) VALUES (11, 62, 69);
+INSERT INTO `sym_entries_data_84` (`id`, `entry_id`, `relation_id`) VALUES (12, 58, 70);
+INSERT INTO `sym_entries_data_84` (`id`, `entry_id`, `relation_id`) VALUES (13, 32, 68);
+INSERT INTO `sym_entries_data_84` (`id`, `entry_id`, `relation_id`) VALUES (9, 31, 68);
+INSERT INTO `sym_entries_data_84` (`id`, `entry_id`, `relation_id`) VALUES (10, 22, 68);
 
 -- *** STRUCTURE: `sym_entries_data_86` ***
 DROP TABLE IF EXISTS `sym_entries_data_86`;
@@ -1198,11 +1197,11 @@ CREATE TABLE `sym_entries_data_94` (
   UNIQUE KEY `username` (`handle`),
   KEY `entry_id` (`entry_id`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_94` ***
 INSERT INTO `sym_entries_data_94` (`id`, `entry_id`, `value`, `handle`) VALUES (1, 74, '(nobody)', 'nobody');
-INSERT INTO `sym_entries_data_94` (`id`, `entry_id`, `value`, `handle`) VALUES (2, 75, 'nils', 'nils');
+INSERT INTO `sym_entries_data_94` (`id`, `entry_id`, `value`, `handle`) VALUES (4, 75, 'nils', 'nils');
 
 -- *** STRUCTURE: `sym_entries_data_95` ***
 DROP TABLE IF EXISTS `sym_entries_data_95`;
@@ -1212,11 +1211,11 @@ CREATE TABLE `sym_entries_data_95` (
   `role_id` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `entry_id` (`entry_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_95` ***
 INSERT INTO `sym_entries_data_95` (`id`, `entry_id`, `role_id`) VALUES (1, 74, 1);
-INSERT INTO `sym_entries_data_95` (`id`, `entry_id`, `role_id`) VALUES (2, 75, 2);
+INSERT INTO `sym_entries_data_95` (`id`, `entry_id`, `role_id`) VALUES (4, 75, 2);
 
 -- *** STRUCTURE: `sym_entries_data_96` ***
 DROP TABLE IF EXISTS `sym_entries_data_96`;
@@ -1227,11 +1226,11 @@ CREATE TABLE `sym_entries_data_96` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`value`),
   KEY `entry_id` (`entry_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_96` ***
 INSERT INTO `sym_entries_data_96` (`id`, `entry_id`, `value`) VALUES (1, 74, 'nobody@bugaroo.symphony-cms.com');
-INSERT INTO `sym_entries_data_96` (`id`, `entry_id`, `value`) VALUES (2, 75, 'nils.werner@gmail.com');
+INSERT INTO `sym_entries_data_96` (`id`, `entry_id`, `value`) VALUES (4, 75, 'nils.werner@gmail.com');
 
 -- *** STRUCTURE: `sym_entries_data_97` ***
 DROP TABLE IF EXISTS `sym_entries_data_97`;
@@ -1250,11 +1249,11 @@ CREATE TABLE `sym_entries_data_97` (
   KEY `length` (`length`),
   KEY `password` (`password`),
   KEY `expires` (`expires`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_97` ***
 INSERT INTO `sym_entries_data_97` (`id`, `entry_id`, `password`, `recovery-code`, `length`, `strength`, `reset`, `expires`) VALUES (1, 74, '11f7908e5a96ef99319757197ce298f604bcd5c9', NULL, 9, 'good', 'no', NULL);
-INSERT INTO `sym_entries_data_97` (`id`, `entry_id`, `password`, `recovery-code`, `length`, `strength`, `reset`, `expires`) VALUES (2, 75, 'd01d4a87609321d22ccb02e61b8397cd2bc21ed9', NULL, 8, 'good', 'no', NULL);
+INSERT INTO `sym_entries_data_97` (`id`, `entry_id`, `password`, `recovery-code`, `length`, `strength`, `reset`, `expires`) VALUES (4, 75, '85f93bfe9eeebffb668f007583d732447e6ffdec', NULL, 8, 'strong', 'no', NULL);
 
 -- *** STRUCTURE: `sym_entries_data_98` ***
 DROP TABLE IF EXISTS `sym_entries_data_98`;
@@ -1267,11 +1266,11 @@ CREATE TABLE `sym_entries_data_98` (
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `handle` (`handle`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_98` ***
 INSERT INTO `sym_entries_data_98` (`id`, `entry_id`, `handle`, `value`) VALUES (1, 74, 'nobody', 'Nobody');
-INSERT INTO `sym_entries_data_98` (`id`, `entry_id`, `handle`, `value`) VALUES (2, 75, 'nils-werner', 'Nils Werner');
+INSERT INTO `sym_entries_data_98` (`id`, `entry_id`, `handle`, `value`) VALUES (4, 75, 'nils-werner', 'Nils Werner');
 
 -- *** STRUCTURE: `sym_entries_data_99` ***
 DROP TABLE IF EXISTS `sym_entries_data_99`;
@@ -1284,10 +1283,10 @@ CREATE TABLE `sym_entries_data_99` (
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `handle` (`handle`),
   KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_entries_data_99` ***
-INSERT INTO `sym_entries_data_99` (`id`, `entry_id`, `handle`, `value`) VALUES (1, 75, 'obsessive-media', 'Obsessive Media');
+INSERT INTO `sym_entries_data_99` (`id`, `entry_id`, `handle`, `value`) VALUES (3, 75, 'obsessive-media', 'Obsessive Media');
 
 -- *** STRUCTURE: `sym_extensions` ***
 DROP TABLE IF EXISTS `sym_extensions`;
@@ -1354,15 +1353,15 @@ INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (144, 85, '/frontend/', 'FrontendDevKitResolve', 'frontendDevKitResolve');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (126, 78, '/frontend/', 'FrontendPrePageResolve', '__checkForMaintenanceMode');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (127, 78, '/frontend/', 'FrontendParamsResolve', '__addParam');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (178, 104, '/blueprints/events/new/', 'AppendEventFilter', 'appendFilter');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (177, 104, '/system/preferences/', 'Save', 'savePreferences');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (176, 104, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (175, 104, '/backend/', 'AdminPagePreGenerate', 'appendAssets');
+INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (176, 104, '/system/preferences/', 'AddCustomPreferenceFieldsets', 'appendPreferences');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (174, 104, '/frontend/', 'EventPostSaveFilter', 'processPostSaveFilter');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (173, 104, '/frontend/', 'EventPreSaveFilter', 'checkEventPermissions');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (172, 104, '/frontend/', 'FrontendProcessEvents', 'appendLoginStatusToEventXML');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (171, 104, '/frontend/', 'FrontendParamsResolve', 'addMemberDetailsToPageParams');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (170, 104, '/frontend/', 'FrontendPageResolved', 'checkFrontendPagePermissions');
-INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (178, 104, '/blueprints/events/new/', 'AppendEventFilter', 'appendFilter');
 INSERT INTO `sym_extensions_delegates` (`id`, `extension_id`, `page`, `delegate`, `callback`) VALUES (179, 104, '/blueprints/events/edit/', 'AppendEventFilter', 'appendFilter');
 
 -- *** STRUCTURE: `sym_fields` ***
@@ -1837,7 +1836,7 @@ CREATE TABLE `sym_pages` (
 ) ENGINE=MyISAM AUTO_INCREMENT=92 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_pages` ***
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (82, NULL, 'Issue', 'issue', NULL, 'issue', 'issue_issue,issue_issue_messages', NULL, 2);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (82, NULL, 'Issue', 'issue', NULL, 'issue', 'issue_issue,issue_issue_messages', 'edit_issue,edit_message', 2);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (78, NULL, 'Project', 'project', NULL, 'project', 'project_project,project_project_issues,project_project_issues_filtered,project_project_issues_messages,project_project_milestones', NULL, 1);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (83, NULL, 'Edit', 'edit', NULL, 'project', NULL, NULL, 4);
 INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (84, 83, 'Issue', 'issue', 'edit', 'issue', NULL, NULL, 5);
@@ -1859,7 +1858,7 @@ CREATE TABLE `sym_pages_types` (
   `type` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `page_id` (`page_id`,`type`)
-) ENGINE=MyISAM AUTO_INCREMENT=699 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=701 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_pages_types` ***
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (689, 76, 'hidden');
@@ -1867,7 +1866,7 @@ INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (698, 86, 'index'
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (690, 75, 'hidden');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (695, 85, 'hidden');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (697, 78, 'hidden');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (696, 82, 'hidden');
+INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (700, 82, 'hidden');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (691, 75, 'maintenance');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (688, 76, 404);
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (694, 88, 'hidden');
