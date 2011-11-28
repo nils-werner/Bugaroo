@@ -12,7 +12,7 @@ templates in the current stylesheet while the ones being included will not.
 This util assumes that your master matches "/" and your page matches "data".
 -->
 
-<xsl:template match="data[events/user-details/@result = 'failure']">
+<xsl:template match="data[events/member-login-info/@logged-in = 'no']">
 	<h2>Login</h2>
 	<xsl:choose>
 		<xsl:when test="/data/events/user-login/@result = 'success'">
@@ -30,23 +30,23 @@ This util assumes that your master matches "/" and your page matches "data".
 			</xsl:if>
 			<p>Please enter your email address and password below.</p>
 			
-			<form action="/user/login/" method="POST">
+			<form action="" method="POST">
 				<div>
 					<div class="clearfix">
 						<p>
 							<label>Email address
-								<input type="text" name="login[email]" id="username" />
+								<input type="text" name="fields[email]" id="username" />
 							</label>
 						</p>
 						<p>
 							<label for="password">Password
-								<input type="password" name="login[password]" id="password" />
+								<input type="password" name="fields[password]" id="password" />
 							</label>
 						</p>
 					</div>
 				</div>
 		
-				<p><button type="submit" class="login" name="action[login]">Log in</button></p>
+				<p><button type="submit" class="login" name="member-action[login]">Log in</button></p>
 		
 				<xsl:if test="$current-page = 'login'">
 					<xsl:if test="$response = 'failed'">
