@@ -33,9 +33,6 @@ INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `cr
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (17, 10, 1, '2010-02-06 12:25:41', '2010-02-06 11:25:41');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (16, 10, 1, '2010-02-06 12:25:28', '2010-02-06 11:25:28');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (13, 8, 1, '2010-02-06 12:21:36', '2010-02-06 11:21:36');
-INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (68, 7, 1, '2010-02-12 01:42:16', '2010-02-12 00:42:16');
-INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (69, 7, 1, '2010-02-12 01:46:48', '2010-02-12 00:46:48');
-INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (70, 7, 1, '2010-02-12 13:38:54', '2010-02-12 12:38:54');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (18, 10, 1, '2010-02-06 12:25:49', '2010-02-06 11:25:49');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (19, 11, 1, '2010-02-06 12:26:18', '2010-02-06 11:26:18');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (20, 11, 1, '2010-02-06 12:26:34', '2010-02-06 11:26:34');
@@ -52,7 +49,6 @@ INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `cr
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (34, 13, 1, '2010-02-06 17:57:56', '2010-02-06 16:57:56');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (35, 13, 1, '2010-02-06 17:58:47', '2010-02-06 16:58:47');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (72, 11, 1, '2010-02-12 13:46:09', '2010-02-12 12:46:09');
-INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (71, 7, 1, '2010-02-12 13:45:46', '2010-02-12 12:45:46');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (62, 12, 1, '2010-02-08 16:27:55', '2010-02-08 15:27:55');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (61, 8, 1, '2010-02-08 14:50:48', '2010-02-08 13:50:48');
 INSERT INTO `sym_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (59, 13, 1, '2010-02-08 03:06:04', '2010-02-08 02:06:04');
@@ -109,44 +105,6 @@ CREATE TABLE `sym_entries_data_102` (
 -- *** DATA: `sym_entries_data_102` ***
 INSERT INTO `sym_entries_data_102` (`id`, `entry_id`, `relation_id`) VALUES (1, 74, NULL);
 INSERT INTO `sym_entries_data_102` (`id`, `entry_id`, `relation_id`) VALUES (4, 75, NULL);
-
--- *** STRUCTURE: `sym_entries_data_23` ***
-DROP TABLE IF EXISTS `sym_entries_data_23`;
-CREATE TABLE `sym_entries_data_23` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `handle` varchar(255) DEFAULT NULL,
-  `value` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `entry_id` (`entry_id`),
-  KEY `handle` (`handle`),
-  KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
-
--- *** DATA: `sym_entries_data_23` ***
-INSERT INTO `sym_entries_data_23` (`id`, `entry_id`, `handle`, `value`) VALUES (60, 68, 'nils-werner', 'Nils Werner');
-INSERT INTO `sym_entries_data_23` (`id`, `entry_id`, `handle`, `value`) VALUES (45, 69, 'johannes-stuehler', 'Johannes Stühler');
-INSERT INTO `sym_entries_data_23` (`id`, `entry_id`, `handle`, `value`) VALUES (46, 70, 'felix-augustin', 'Felix Augustin');
-INSERT INTO `sym_entries_data_23` (`id`, `entry_id`, `handle`, `value`) VALUES (15, 71, 'nobody', '(nobody)');
-
--- *** STRUCTURE: `sym_entries_data_24` ***
-DROP TABLE IF EXISTS `sym_entries_data_24`;
-CREATE TABLE `sym_entries_data_24` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `handle` varchar(255) DEFAULT NULL,
-  `value` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `entry_id` (`entry_id`),
-  KEY `handle` (`handle`),
-  KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
-
--- *** DATA: `sym_entries_data_24` ***
-INSERT INTO `sym_entries_data_24` (`id`, `entry_id`, `handle`, `value`) VALUES (46, 70, 'felix-augustin-hotmailcom', 'felix_augustin@hotmail.com');
-INSERT INTO `sym_entries_data_24` (`id`, `entry_id`, `handle`, `value`) VALUES (45, 69, 'johannesstuehler-gmailcom', 'johannes.stuehler@gmail.com');
-INSERT INTO `sym_entries_data_24` (`id`, `entry_id`, `handle`, `value`) VALUES (60, 68, 'nilswerner-gmailcom', 'nils.werner@gmail.com');
-INSERT INTO `sym_entries_data_24` (`id`, `entry_id`, `handle`, `value`) VALUES (15, 71, 'nwerner-obsessive-mediade', 'nwerner@obsessive-media.de');
 
 -- *** STRUCTURE: `sym_entries_data_26` ***
 DROP TABLE IF EXISTS `sym_entries_data_26`;
@@ -496,24 +454,6 @@ INSERT INTO `sym_entries_data_47` (`id`, `entry_id`, `value`) VALUES (1, 19, '#a
 INSERT INTO `sym_entries_data_47` (`id`, `entry_id`, `value`) VALUES (2, 20, '#a2a7d8');
 INSERT INTO `sym_entries_data_47` (`id`, `entry_id`, `value`) VALUES (3, 21, '#cbf4c8');
 INSERT INTO `sym_entries_data_47` (`id`, `entry_id`, `value`) VALUES (4, 72, '#ffffff');
-
--- *** STRUCTURE: `sym_entries_data_48` ***
-DROP TABLE IF EXISTS `sym_entries_data_48`;
-CREATE TABLE `sym_entries_data_48` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `handle` varchar(255) DEFAULT NULL,
-  `value` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `entry_id` (`entry_id`),
-  KEY `handle` (`handle`),
-  KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
-
--- *** DATA: `sym_entries_data_48` ***
-INSERT INTO `sym_entries_data_48` (`id`, `entry_id`, `handle`, `value`) VALUES (55, 68, 'obsessive-media', 'Obsessive Media');
-INSERT INTO `sym_entries_data_48` (`id`, `entry_id`, `handle`, `value`) VALUES (40, 69, 'obsessive-media', 'Obsessive Media');
-INSERT INTO `sym_entries_data_48` (`id`, `entry_id`, `handle`, `value`) VALUES (41, 70, 'stauden-augustin', 'Stauden Augustin');
 
 -- *** STRUCTURE: `sym_entries_data_49` ***
 DROP TABLE IF EXISTS `sym_entries_data_49`;
@@ -1006,44 +946,6 @@ CREATE TABLE `sym_entries_data_76` (
 INSERT INTO `sym_entries_data_76` (`id`, `entry_id`, `value`) VALUES (11, 13, 2);
 INSERT INTO `sym_entries_data_76` (`id`, `entry_id`, `value`) VALUES (8, 61, 3);
 
--- *** STRUCTURE: `sym_entries_data_82` ***
-DROP TABLE IF EXISTS `sym_entries_data_82`;
-CREATE TABLE `sym_entries_data_82` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `handle` varchar(255) DEFAULT NULL,
-  `value` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `entry_id` (`entry_id`),
-  KEY `handle` (`handle`),
-  KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
-
--- *** DATA: `sym_entries_data_82` ***
-INSERT INTO `sym_entries_data_82` (`id`, `entry_id`, `handle`, `value`) VALUES (35, 69, 'jonny', 'jonny');
-INSERT INTO `sym_entries_data_82` (`id`, `entry_id`, `handle`, `value`) VALUES (50, 68, 'nils', 'nils');
-INSERT INTO `sym_entries_data_82` (`id`, `entry_id`, `handle`, `value`) VALUES (36, 70, 'felix', 'felix');
-INSERT INTO `sym_entries_data_82` (`id`, `entry_id`, `handle`, `value`) VALUES (5, 71, 'nobody', '(nobody)');
-
--- *** STRUCTURE: `sym_entries_data_83` ***
-DROP TABLE IF EXISTS `sym_entries_data_83`;
-CREATE TABLE `sym_entries_data_83` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `handle` varchar(255) DEFAULT NULL,
-  `value` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `entry_id` (`entry_id`),
-  KEY `handle` (`handle`),
-  KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
-
--- *** DATA: `sym_entries_data_83` ***
-INSERT INTO `sym_entries_data_83` (`id`, `entry_id`, `handle`, `value`) VALUES (35, 69, 'developer', 'Developer');
-INSERT INTO `sym_entries_data_83` (`id`, `entry_id`, `handle`, `value`) VALUES (50, 68, 'developer', 'Developer');
-INSERT INTO `sym_entries_data_83` (`id`, `entry_id`, `handle`, `value`) VALUES (36, 70, 'customer', 'Customer');
-INSERT INTO `sym_entries_data_83` (`id`, `entry_id`, `handle`, `value`) VALUES (5, 71, 'developer', 'Developer');
-
 -- *** STRUCTURE: `sym_entries_data_84` ***
 DROP TABLE IF EXISTS `sym_entries_data_84`;
 CREATE TABLE `sym_entries_data_84` (
@@ -1076,23 +978,6 @@ CREATE TABLE `sym_entries_data_86` (
 -- *** DATA: `sym_entries_data_86` ***
 INSERT INTO `sym_entries_data_86` (`id`, `entry_id`, `value`) VALUES (1, 72, 'yes');
 
--- *** STRUCTURE: `sym_entries_data_87` ***
-DROP TABLE IF EXISTS `sym_entries_data_87`;
-CREATE TABLE `sym_entries_data_87` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `value` enum('yes','no') NOT NULL DEFAULT 'no',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `entry_id` (`entry_id`),
-  KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
-
--- *** DATA: `sym_entries_data_87` ***
-INSERT INTO `sym_entries_data_87` (`id`, `entry_id`, `value`) VALUES (2, 71, 'yes');
-INSERT INTO `sym_entries_data_87` (`id`, `entry_id`, `value`) VALUES (47, 68, 'no');
-INSERT INTO `sym_entries_data_87` (`id`, `entry_id`, `value`) VALUES (33, 70, 'no');
-INSERT INTO `sym_entries_data_87` (`id`, `entry_id`, `value`) VALUES (32, 69, 'no');
-
 -- *** STRUCTURE: `sym_entries_data_88` ***
 DROP TABLE IF EXISTS `sym_entries_data_88`;
 CREATE TABLE `sym_entries_data_88` (
@@ -1106,85 +991,6 @@ CREATE TABLE `sym_entries_data_88` (
 
 -- *** DATA: `sym_entries_data_88` ***
 INSERT INTO `sym_entries_data_88` (`id`, `entry_id`, `value`) VALUES (3, 73, 'yes');
-
--- *** STRUCTURE: `sym_entries_data_89` ***
-DROP TABLE IF EXISTS `sym_entries_data_89`;
-CREATE TABLE `sym_entries_data_89` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `handle` varchar(255) DEFAULT NULL,
-  `value` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `entry_id` (`entry_id`),
-  KEY `handle` (`handle`),
-  KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
-
--- *** DATA: `sym_entries_data_89` ***
-INSERT INTO `sym_entries_data_89` (`id`, `entry_id`, `handle`, `value`) VALUES (38, 68, '098f6bcd4621d373cade4e832627b4f6', '098f6bcd4621d373cade4e832627b4f6');
-
--- *** STRUCTURE: `sym_entries_data_90` ***
-DROP TABLE IF EXISTS `sym_entries_data_90`;
-CREATE TABLE `sym_entries_data_90` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `handle` varchar(255) DEFAULT NULL,
-  `value` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `entry_id` (`entry_id`),
-  KEY `handle` (`handle`),
-  KEY `value` (`value`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
-
--- *** DATA: `sym_entries_data_90` ***
-INSERT INTO `sym_entries_data_90` (`id`, `entry_id`, `handle`, `value`) VALUES (40, 68, 'abbalaabbala', 'abbalaabbala');
-
--- *** STRUCTURE: `sym_entries_data_91` ***
-DROP TABLE IF EXISTS `sym_entries_data_91`;
-CREATE TABLE `sym_entries_data_91` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `relation_id` int(11) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `entry_id` (`entry_id`),
-  KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
-
--- *** DATA: `sym_entries_data_91` ***
-INSERT INTO `sym_entries_data_91` (`id`, `entry_id`, `relation_id`) VALUES (5, 69, 13);
-INSERT INTO `sym_entries_data_91` (`id`, `entry_id`, `relation_id`) VALUES (6, 70, 13);
-INSERT INTO `sym_entries_data_91` (`id`, `entry_id`, `relation_id`) VALUES (22, 68, 13);
-
--- *** STRUCTURE: `sym_entries_data_92` ***
-DROP TABLE IF EXISTS `sym_entries_data_92`;
-CREATE TABLE `sym_entries_data_92` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `relation_id` int(11) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `entry_id` (`entry_id`),
-  KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
-
--- *** DATA: `sym_entries_data_92` ***
-INSERT INTO `sym_entries_data_92` (`id`, `entry_id`, `relation_id`) VALUES (19, 68, NULL);
-INSERT INTO `sym_entries_data_92` (`id`, `entry_id`, `relation_id`) VALUES (4, 69, NULL);
-INSERT INTO `sym_entries_data_92` (`id`, `entry_id`, `relation_id`) VALUES (5, 70, NULL);
-
--- *** STRUCTURE: `sym_entries_data_93` ***
-DROP TABLE IF EXISTS `sym_entries_data_93`;
-CREATE TABLE `sym_entries_data_93` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `relation_id` int(11) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `entry_id` (`entry_id`),
-  KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
-
--- *** DATA: `sym_entries_data_93` ***
-INSERT INTO `sym_entries_data_93` (`id`, `entry_id`, `relation_id`) VALUES (26, 68, 62);
-INSERT INTO `sym_entries_data_93` (`id`, `entry_id`, `relation_id`) VALUES (25, 68, 22);
 
 -- *** STRUCTURE: `sym_entries_data_94` ***
 DROP TABLE IF EXISTS `sym_entries_data_94`;
@@ -1395,8 +1201,6 @@ INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (27, 'Description', 'description', 'textarea', 8, 'no', 1, 'main', 'no');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (26, 'Title', 'title', 'input', 8, 'yes', 0, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (86, 'None', 'none', 'checkbox', 11, 'no', 3, 'sidebar', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (24, 'Email', 'email', 'input', 7, 'yes', 4, 'main', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (23, 'Name', 'name', 'input', 7, 'yes', 2, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (39, 'Project', 'project', 'selectbox_link', 12, 'yes', 8, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (40, 'Creator', 'creator', 'selectbox_link', 12, 'yes', 2, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (41, 'Priority', 'priority', 'selectbox_link', 12, 'yes', 3, 'main', 'yes');
@@ -1406,7 +1210,6 @@ INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (49, 'Description', 'description', 'textarea', 13, 'no', 0, 'main', 'no');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (46, 'Color', 'color', 'colorchooser', 10, 'yes', 1, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (47, 'Color', 'color', 'colorchooser', 11, 'yes', 1, 'main', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (48, 'Company', 'company', 'input', 7, 'no', 3, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (50, 'Creator', 'creator', 'selectbox_link', 13, 'yes', 3, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (73, 'Priority', 'priority', 'selectbox_link', 13, 'yes', 4, 'sidebar', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (52, 'Category', 'category', 'selectbox_link', 13, 'yes', 5, 'sidebar', 'yes');
@@ -1431,16 +1234,8 @@ INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (74, 'Modified', 'modified', 'date', 12, 'no', 9, 'sidebar', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (75, 'File', 'file', 'upload', 13, 'no', 2, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (76, 'Order', 'order', 'order_entries', 8, 'no', 5, 'main', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (83, 'Role', 'role', 'select', 7, 'no', 1, 'sidebar', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (82, 'Username', 'username', 'input', 7, 'yes', 0, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (84, 'Modifier', 'modifier', 'selectbox_link', 12, 'yes', 10, 'sidebar', 'no');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (87, 'None', 'none', 'checkbox', 7, 'no', 7, 'sidebar', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (88, 'None', 'none', 'checkbox', 9, 'no', 5, 'sidebar', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (89, 'Password', 'password', 'input', 7, 'no', 5, 'main', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (90, 'Token', 'token', 'input', 7, 'no', 6, 'main', 'yes');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (91, 'Detailed', 'detailed', 'selectbox_link', 7, 'no', 8, 'sidebar', 'no');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (92, 'Hide', 'hide', 'selectbox_link', 7, 'no', 9, 'sidebar', 'no');
-INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (93, 'Suscriptions', 'suscriptions', 'selectbox_link', 7, 'no', 10, 'sidebar', 'no');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (94, 'Username', 'username', 'memberusername', 15, 'yes', 1, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (95, 'Role', 'role', 'memberrole', 15, 'yes', 4, 'main', 'yes');
 INSERT INTO `sym_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (96, 'Email', 'email', 'memberemail', 15, 'yes', 2, 'main', 'yes');
@@ -1483,7 +1278,6 @@ INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`, `descripti
 INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (38, 66, 'off', 'Counts towards finished percentage');
 INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (34, 72, 'on', 'Display in Dashboard-View');
 INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (50, 86, 'off', 'Placeholder for Anonymous');
-INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (49, 87, 'off', 'Placeholder for Anonymous');
 INSERT INTO `sym_fields_checkbox` (`id`, `field_id`, `default_state`, `description`) VALUES (51, 88, 'off', 'Placeholder for Anonymous');
 
 -- *** STRUCTURE: `sym_fields_colorchooser` ***
@@ -1528,18 +1322,12 @@ CREATE TABLE `sym_fields_input` (
 ) ENGINE=MyISAM AUTO_INCREMENT=154 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_fields_input` ***
-INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (141, 89, NULL);
-INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (137, 82, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (64, 57, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (153, 37, NULL);
-INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (139, 48, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (144, 31, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (54, 35, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (143, 36, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (152, 26, NULL);
-INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (140, 24, '/^\\w(?:\\.?[\\w%+-]+)*@\\w(?:[\\w-]*\\.)+?[a-z]{2,}$/i');
-INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (138, 23, NULL);
-INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (142, 90, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (150, 98, NULL);
 INSERT INTO `sym_fields_input` (`id`, `field_id`, `validator`) VALUES (151, 99, NULL);
 
@@ -1654,7 +1442,6 @@ CREATE TABLE `sym_fields_select` (
 -- *** DATA: `sym_fields_select` ***
 INSERT INTO `sym_fields_select` (`id`, `field_id`, `allow_multiple_selection`, `static_options`, `dynamic_options`, `show_association`, `sort_options`) VALUES (25, 28, 'no', 'Active, Inactive, Finished', NULL, 'yes', 'no');
 INSERT INTO `sym_fields_select` (`id`, `field_id`, `allow_multiple_selection`, `static_options`, `dynamic_options`, `show_association`, `sort_options`) VALUES (23, 71, 'no', 'Active,Inactive,Finished', NULL, 'yes', 'no');
-INSERT INTO `sym_fields_select` (`id`, `field_id`, `allow_multiple_selection`, `static_options`, `dynamic_options`, `show_association`, `sort_options`) VALUES (22, 83, 'no', 'Inactive,Customer,Developer', NULL, 'yes', 'no');
 
 -- *** STRUCTURE: `sym_fields_selectbox_link` ***
 DROP TABLE IF EXISTS `sym_fields_selectbox_link`;
@@ -1688,9 +1475,6 @@ INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selec
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (308, 59, 'no', 57, 20, 'yes');
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (304, 73, 'no', 35, 20, 'yes');
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (302, 84, 'no', 98, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (278, 91, 'yes', 26, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (279, 92, 'yes', 26, 20, 'yes');
-INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (280, 93, 'yes', 37, 20, 'yes');
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (290, 100, 'yes', 26, 20, 'yes');
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (291, 101, 'yes', 26, 20, 'yes');
 INSERT INTO `sym_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `related_field_id`, `limit`, `show_association`) VALUES (292, 102, 'yes', 37, 2000, 'yes');
@@ -1836,19 +1620,12 @@ CREATE TABLE `sym_pages` (
 ) ENGINE=MyISAM AUTO_INCREMENT=92 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_pages` ***
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (82, NULL, 'Issue', 'issue', NULL, 'issue', 'issue_issue,issue_issue_messages', 'edit_issue,edit_message', 2);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (78, NULL, 'Project', 'project', NULL, 'project', 'project_project,project_project_issues,project_project_issues_filtered,project_project_issues_messages,project_project_milestones', NULL, 1);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (83, NULL, 'Edit', 'edit', NULL, 'project', NULL, NULL, 4);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (84, 83, 'Issue', 'issue', 'edit', 'issue', NULL, NULL, 5);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (85, 83, 'Milestone', 'milestone', 'edit', 'milestone', NULL, NULL, 6);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (75, NULL, 'Maintenance', 'maintenance', NULL, NULL, NULL, NULL, 11);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (76, NULL, 'Page Not Found', 'page-not-found', NULL, NULL, NULL, NULL, 12);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (89, 88, 'Login', 'login', 'user', 'response', NULL, NULL, 8);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (87, 82, 'New Issue', 'new', 'issue', NULL, NULL, NULL, 3);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (86, NULL, 'Dashboard', 'dashboard', NULL, NULL, 'dashboard_projects,dashboard_projects_issues,dashboard_projects_issues_messages,dashboard_projects_milestones', NULL, 0);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (88, NULL, 'User', 'user', NULL, 'name', NULL, NULL, 7);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (90, 88, 'Logout', 'logout', 'user', NULL, NULL, NULL, 9);
-INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (91, 88, 'Edit', 'edit', 'user', NULL, NULL, NULL, 10);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (82, NULL, 'Issue', 'issue', NULL, 'issue', 'issue_issue,issue_issue_messages', 'edit_issue,edit_message', 9);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (78, NULL, 'Project', 'project', NULL, 'project', 'project_project,project_project_issues,project_project_issues_filtered,project_project_issues_messages,project_project_milestones', NULL, 8);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (75, NULL, 'Maintenance', 'maintenance', NULL, NULL, NULL, NULL, 18);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (76, NULL, 'Page Not Found', 'page-not-found', NULL, NULL, NULL, NULL, 19);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (87, 82, 'New Issue', 'new', 'issue', NULL, NULL, NULL, 10);
+INSERT INTO `sym_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (86, NULL, 'Dashboard', 'dashboard', NULL, NULL, 'dashboard_projects,dashboard_projects_issues,dashboard_projects_issues_messages,dashboard_projects_milestones', NULL, 7);
 
 -- *** STRUCTURE: `sym_pages_types` ***
 DROP TABLE IF EXISTS `sym_pages_types`;
@@ -1864,13 +1641,10 @@ CREATE TABLE `sym_pages_types` (
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (689, 76, 'hidden');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (698, 86, 'index');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (690, 75, 'hidden');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (695, 85, 'hidden');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (697, 78, 'hidden');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (700, 82, 'hidden');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (691, 75, 'maintenance');
 INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (688, 76, 404);
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (694, 88, 'hidden');
-INSERT INTO `sym_pages_types` (`id`, `page_id`, `type`) VALUES (693, 89, 'hidden');
 
 -- *** STRUCTURE: `sym_sections` ***
 DROP TABLE IF EXISTS `sym_sections`;
@@ -1891,12 +1665,11 @@ CREATE TABLE `sym_sections` (
 INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (10, 'Priority', 'priority', 5, 64, 'asc', 'no', 'Categorization');
 INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (9, 'Milestones', 'milestones', 1, NULL, 'asc', 'no', 'Projects');
 INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (8, 'Projects', 'projects', 0, 76, 'asc', 'no', 'Projects');
-INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (7, 'Users', 'users', 7, NULL, 'asc', 'no', 'Users');
 INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (11, 'Category', 'category', 6, 63, 'asc', 'no', 'Categorization');
 INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (12, 'Issues', 'issues', 2, NULL, 'asc', 'no', 'Issues');
 INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (13, 'Messages', 'messages', 3, 68, 'desc', 'no', 'Issues');
 INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (14, 'Status', 'status', 4, 65, 'asc', 'no', 'Categorization');
-INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (15, 'Members', 'members', 8, NULL, 'asc', 'no', 'Users');
+INSERT INTO `sym_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (15, 'Members', 'members', 7, NULL, 'asc', 'no', 'Users');
 
 -- *** STRUCTURE: `sym_sections_association` ***
 DROP TABLE IF EXISTS `sym_sections_association`;
@@ -1930,9 +1703,6 @@ INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_secti
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (300, 14, 57, 12, 58, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (308, 14, 57, 13, 59, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (302, 15, 98, 12, 84, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (278, 8, 26, 7, 91, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (279, 8, 26, 7, 92, 'no');
-INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (280, 12, 37, 7, 93, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (290, 8, 26, 15, 100, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (291, 8, 26, 15, 101, 'no');
 INSERT INTO `sym_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (292, 12, 37, 15, 102, 'no');
