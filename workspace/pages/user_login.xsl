@@ -13,6 +13,5 @@
 	indent="yes" />
 
 <xsl:template match="data">
-	
 </xsl:template>
 </xsl:stylesheet>

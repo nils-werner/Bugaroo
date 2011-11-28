@@ -4,6 +4,7 @@
 
 <xsl:template name="sidebar">
 	<xsl:apply-templates select="issues-index" />
+	<a href="?member-action=logout">Logout</a>
 </xsl:template>
 
 <xsl:template match="issues-index">

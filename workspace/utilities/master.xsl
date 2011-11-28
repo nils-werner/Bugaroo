@@ -14,8 +14,8 @@
 	indent="yes" />
 	
 <!-- login status -->
-<xsl:variable name="is-logged-in" select="/data/events/user-details/@logged-in"/>
-<xsl:variable name="user-id" select="/data/events/user-details/@user-id"/>
+<xsl:variable name="is-logged-in" select="/data/events/member-login-info/@logged-in"/>
+<xsl:variable name="user-id" select="/data/events/member-login-info/@id"/>
 <xsl:variable name="is-admin" select="/data/events/login-info/@logged-in"/>
 <xsl:variable name="query-string" select="substring-after($current-path,'?')" />
 
