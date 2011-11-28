@@ -159,4 +159,32 @@
 	</xsl:if>
 </xsl:template>
 
+<xsl:template match="issue-issue/entry" mode="attribute-list-infobar">
+	
+	<ul>
+		<xsl:attribute name="id">infobar</xsl:attribute>
+		<xsl:attribute name="style">background-color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/backgroundcolor" />; color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/textcolor" />;</xsl:attribute>
+		<li class="status">
+			<span>Status</span>
+			<xsl:value-of select="./status/item" />
+		</li>
+		<li class="priority">
+			<span>Priority</span>
+			<xsl:value-of select="./priority/item" />
+		</li>
+		<li class="category auxiliary">
+			<span>Category</span>
+			<xsl:value-of select="./category/item" />
+		</li>
+		<li class="milestone auxiliary">
+			<span>Milestone</span>
+			<xsl:value-of select="./milestone/item" />
+		</li>
+		<li class="assignee auxiliary">
+			<span>Assignee</span>
+			<xsl:value-of select="./assignee/item" />
+		</li>
+	</ul>
+</xsl:template>
+
 </xsl:stylesheet>

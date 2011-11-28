@@ -23,7 +23,47 @@
 </xsl:template>
 
 <xsl:template match="data" mode="sidebar">
-	<xsl:call-template name="filter-form" />
+
+	<xsl:variable name="default-value" select="'- All -'" />
+	
+	<h3>Filter</h3>
+	<form action="" method="get">
+		<input type="text" name="q" id="filter-input" value="" />
+	</form>
+	<a class="toggle-filter" href="#">Toggle Filter Form</a>
+	<p id="filter-form">
+	<xsl:apply-templates select="/data/index-status" mode="links" />
+	
+	<xsl:apply-templates select="/data/index-priority" mode="links" />
+	
+	<xsl:apply-templates select="/data/index-category" mode="links">
+		<xsl:with-param name="default-value" select="'null'" />
+		<xsl:with-param name="default-caption" select="'(none)'" />
+	</xsl:apply-templates>
+	
+	<xsl:apply-templates select="/data/index-assignee" mode="links" >
+		<xsl:with-param name="label" select="'Assigned to'" />
+		<xsl:with-param name="default-value" select="'null'" />
+		<xsl:with-param name="default-caption" select="'(nobody)'" />
+	</xsl:apply-templates>
+	
+	<xsl:apply-templates select="/data/index-milestone" mode="links">
+		<xsl:with-param name="default-value" select="'null'" />
+		<xsl:with-param name="default-caption" select="'(none)'" />
+	</xsl:apply-templates>
+
+	<!-- <form action="" method="GET" id="filter-form">		
+		<label>Search for ID
+			<input type="text" name="q" />
+		</label>
+		
+		<label class="submit">
+			<input name="action[filter]" class="submit" type="submit" value="Submit" />
+		</label>
+	</form> -->
+		<a class="clear cancel" href=".">Clear filter</a>
+	</p>
+
 	<h2>Project Stats</h2>
 	<h3>Activity</h3>
 	<xsl:call-template name="google-sparkline">
@@ -43,12 +83,85 @@
 	<xsl:apply-templates select="project-project-milestones" />
 </xsl:template>
 
-<xsl:template match="project-project">
-</xsl:template>
-
-<xsl:template match="project-project/entry">
-	<li>
-	</li>
+<xsl:template match="project-project-issues-filtered/entry" mode="attribute-list-table">
+	<ul>
+		<li class="id">#<xsl:value-of select="./@id" /></li>
+		<li class="status">
+			<xsl:attribute name="style">background-color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/backgroundcolor" />;</xsl:attribute>
+			<span>Status</span>
+			<a>
+				<xsl:attribute name="href">
+					<xsl:call-template name="toggle-get-param">
+						<xsl:with-param name="param" select="'status'" />
+						<xsl:with-param name="value" select="./status/item/@id" />
+					</xsl:call-template>
+				</xsl:attribute>
+				<xsl:attribute name="style">color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/textcolor" />;</xsl:attribute>
+				<xsl:value-of select="./status/item" />
+			</a>
+		</li>
+		<li class="priority">
+			<span>Priority</span>
+			<a href="?priority={./priority/item/@id}">
+				<xsl:attribute name="href">
+					<xsl:call-template name="toggle-get-param">
+						<xsl:with-param name="param" select="'priority'" />
+						<xsl:with-param name="value" select="./priority/item/@id" />
+					</xsl:call-template>
+				</xsl:attribute>
+				<xsl:attribute name="style">color: <xsl:value-of select="/data/index-priority/entry[@id = current()/priority/item/@id]/color" />;</xsl:attribute>
+				<xsl:value-of select="./priority/item" />
+			</a>
+		</li>
+		<li class="category auxiliary">
+			<span>Category</span>
+			<a href="?category={./category/item/@id}">
+				<xsl:attribute name="href">
+					<xsl:call-template name="toggle-get-param">
+						<xsl:with-param name="param" select="'category'" />
+						<xsl:with-param name="value" select="./category/item/@id" />
+					</xsl:call-template>
+				</xsl:attribute>
+				<xsl:if test="not(./category/item)">No category</xsl:if>
+				<xsl:value-of select="./category/item" />
+			</a>
+		</li>
+		<li class="milestone auxiliary">
+			<span>Milestone</span>
+			<a href="?milestone={./milestone/item/@id}">
+				<xsl:attribute name="href">
+					<xsl:call-template name="toggle-get-param">
+						<xsl:with-param name="param" select="'milestone'" />
+						<xsl:with-param name="value" select="./milestone/item/@id" />
+					</xsl:call-template>
+				</xsl:attribute>
+				<xsl:if test="not(./milestone/item)">No milestone</xsl:if>
+				<xsl:value-of select="./milestone/item" />
+			</a>
+		</li>
+		<li class="assignee auxiliary">
+			<span>Assignee</span>
+			<a href="?assignee={./assignee/item/@id}">
+				<xsl:attribute name="href">
+					<xsl:call-template name="toggle-get-param">
+						<xsl:with-param name="param" select="'assignee'" />
+						<xsl:with-param name="value" select="./assignee/item/@id" />
+					</xsl:call-template>
+				</xsl:attribute>
+				<xsl:if test="not(./assignee/item)">No Assignee</xsl:if>
+				<xsl:value-of select="./assignee/item" />
+			</a>
+		</li>
+		<li class="comments auxiliary">
+			<a href="{$root}/issue/{@id}">
+				<xsl:value-of select="./@messages" /><xsl:text> </xsl:text>
+				<xsl:call-template name="pluralize">
+					<xsl:with-param name="number" select="./@messages" />
+					<xsl:with-param name="term" select="'Comment'" />
+				</xsl:call-template>
+			</a>
+		</li>
+	</ul>
 </xsl:template>
 
 <xsl:template match="project-project-issues-filtered">
