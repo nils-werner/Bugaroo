@@ -167,7 +167,7 @@
 			</a>
 		</li>
 		<li class="comments auxiliary">
-			<a href="{$root}/issue/{@id}">
+			<a href="./{@id}/">
 				<xsl:value-of select="./@messages" /><xsl:text> </xsl:text>
 				<xsl:call-template name="pluralize">
 					<xsl:with-param name="number" select="./@messages" />
@@ -198,7 +198,7 @@
 
 
 <xsl:template match="project-project-issues-filtered/entry">
-	<li><a href="{$root}/issue/{@id}/"><xsl:value-of select="title" /></a>
+	<li><a href="./{@id}/"><xsl:value-of select="title" /></a>
 		<xsl:apply-templates select="." mode="attribute-list-table" />
 	</li>
 </xsl:template>

@@ -22,7 +22,7 @@
 	<xsl:apply-templates select="issue-issue/entry" />
 	
 	<p id="back">
-		<a href="{$root}/project/{issue-issue/entry/project/item/@handle}/">&#8592; <xsl:value-of select="issue-issue/entry/project/item" /></a>
+		<a href="../">&#8592; <xsl:value-of select="issue-issue/entry/project/item" /></a>
 	</p>
 	
 	<xsl:apply-templates select="issue-issue-messages/entry" />
