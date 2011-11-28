@@ -20,7 +20,7 @@
 		<h2>Personal Stats</h2>
 		<h3>Activity</h3>
 		<xsl:call-template name="google-sparkline">
-			<xsl:with-param name="messages" select="dashboard-projects-issues-messages/entry[creator/item/@id = $user-id]" />
+			<xsl:with-param name="messages" select="dashboard-projects-issues-messages/entry[creator/item/@id = $member-id]" />
 			<xsl:with-param name="width" select="'140'" />
 			<xsl:with-param name="height" select="'50'" />
 		</xsl:call-template>
@@ -47,14 +47,14 @@
 <xsl:template match="dashboard-projects">
 	<h3>Starred projects</h3>
 	<ul id="dashboard">
-		<xsl:apply-templates select="entry[@id = /data/index-assignee/entry[@id = $user-id]/detailed/item/@id and not(@id = /data/index-assignee/entry[@id = $user-id]/hide/item/@id)]" mode="detailed" />
+		<xsl:apply-templates select="entry[@id = /data/index-assignee/entry[@id = $member-id]/detailed/item/@id and not(@id = /data/index-assignee/entry[@id = $member-id]/hide/item/@id)]" mode="detailed" />
 		<xsl:if test="not(entry)">
 			<li>There are no projects matching your criteria</li>
 		</xsl:if>
 	</ul>
 	<h3>Other projects</h3>
 	<ul id="dashboard-other">
-		<xsl:apply-templates select="entry[@id != /data/index-assignee/entry[@id = $user-id]/detailed/item/@id and not(@id = /data/index-assignee/entry[@id = $user-id]/hide/item/@id)]" />
+		<xsl:apply-templates select="entry[@id != /data/index-assignee/entry[@id = $member-id]/detailed/item/@id and not(@id = /data/index-assignee/entry[@id = $member-id]/hide/item/@id)]" />
 		<xsl:if test="not(entry)">
 			<li>There are no projects matching your criteria</li>
 		</xsl:if>
@@ -63,7 +63,7 @@
 
 <xsl:template match="dashboard-projects/entry" mode="detailed">
 	
-	<li class="{status/item/@handle}"><a href="{$root}/project/{title/@handle}/?assignee={$user-id}"><xsl:value-of select="title" /></a> <a class="all" href="{$root}/project/{title/@handle}/">all issues</a>
+	<li class="{status/item/@handle}"><a href="{$root}/project/{title/@handle}/?assignee={$member-id}"><xsl:value-of select="title" /></a> <a class="all" href="{$root}/project/{title/@handle}/">all issues</a>
 		<ul>
 			<xsl:apply-templates select="/data/dashboard-projects-milestones/entry[project/item/@id = current()/@id]" />
 			<xsl:if test="not(/data/dashboard-projects-milestones/entry[project/item/@id = current()/@id])">
@@ -88,12 +88,12 @@
 
 <xsl:template match="dashboard-projects/entry">
 	
-	<li class="{status/item/@handle}"><a href="{$root}/project/{title/@handle}/?assignee={$user-id}"><xsl:value-of select="title" /></a> <a class="all" href="{$root}/project/{title/@handle}/">all issues</a>
+	<li class="{status/item/@handle}"><a href="{$root}/project/{title/@handle}/?assignee={$member-id}"><xsl:value-of select="title" /></a> <a class="all" href="{$root}/project/{title/@handle}/">all issues</a>
 	</li>
 </xsl:template>
 
 <xsl:template match="dashboard-projects-milestones/entry">
-	<li class="{status/item/@handle}"><a href="{$root}/project/{project/item/@handle}/?milestone={@id}&amp;assignee={$user-id}"><xsl:value-of select="title" /></a> <a  class="all" href="{$root}/project/{project/item/@handle}/?milestone={@id}">all issues</a>
+	<li class="{status/item/@handle}"><a href="{$root}/project/{project/item/@handle}/?milestone={@id}&amp;assignee={$member-id}"><xsl:value-of select="title" /></a> <a  class="all" href="{$root}/project/{project/item/@handle}/?milestone={@id}">all issues</a>
 		<ul class="details">
 			<xsl:apply-templates select="/data/index-status/entry[dashboard = 'Yes']">
 				<xsl:with-param name="issues" select="/data/dashboard-projects-issues/entry[milestone/item/@id = current()/@id]" />
