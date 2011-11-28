@@ -272,7 +272,7 @@
 	<xsl:param name="default-caption" select="''" />
 
 	<span class="label">
-		<xsl:if test="/data/param-pool/*[name() = concat('url-',$field)]">
+		<xsl:if test="/data/params/*[name() = concat('url-',$field)]">
 			<xsl:attribute name="class">selected</xsl:attribute>
 		</xsl:if>
 		<xsl:value-of select="$label" />
@@ -283,7 +283,7 @@
 					or
 					(name(current()) != 'index-milestone' and name(current()) != 'index-assignee')
 					]" mode="link">
-			<xsl:with-param name="selected-value" select="/data/param-pool/*[name() = concat('url-',$field)]" />
+			<xsl:with-param name="selected-value" select="/data/params/*[name() = concat('url-',$field)]" />
 			<xsl:with-param name="name" select="$field" />
 		</xsl:apply-templates>
 	</span>
@@ -295,10 +295,10 @@
 	
 	<a>
 		<xsl:choose>
-			<xsl:when test="not(/data/param-pool/*[name() = concat('url-',$name)])">
+			<xsl:when test="not(/data/params/*[name() = concat('url-',$name)])">
 				<xsl:attribute name="class">none</xsl:attribute>
 			</xsl:when>
-			<xsl:when test="contains(/data/param-pool/*[name() = concat('url-',$name)],@id)">
+			<xsl:when test="contains(/data/params/*[name() = concat('url-',$name)],@id)">
 				<xsl:attribute name="class">selected</xsl:attribute>
 			</xsl:when>
 		</xsl:choose>
@@ -316,7 +316,7 @@
 	<xsl:param name="param" />
 	<xsl:param name="value" />
 		<xsl:choose>
-		<xsl:when test="contains(/data/param-pool/*[name() = concat('url-',$param)],$value)">
+		<xsl:when test="contains(/data/params/*[name() = concat('url-',$param)],$value)">
 			<xsl:call-template name="remove-get-param">
 				<xsl:with-param name="param" select="$param" />
 				<xsl:with-param name="value" select="$value" />
@@ -336,7 +336,7 @@
 	<xsl:param name="value" />
 	
 	<xsl:text>?</xsl:text>
-	<xsl:for-each select="/data/param-pool/*[substring(name(),1,4) = 'url-']">
+	<xsl:for-each select="/data/params/*[substring(name(),1,4) = 'url-']">
 		<xsl:variable name="current-param" select="substring(name(),5)" />
 		<xsl:variable name="new-value">
 			<xsl:choose>
@@ -347,7 +347,7 @@
 		<xsl:value-of select="concat($current-param,'=',$new-value)" />
 		<xsl:if test="position() != last()">&amp;</xsl:if>
 	</xsl:for-each>
-	<xsl:if test="not(/data/param-pool/*[name() = concat('url-',$param)])"><xsl:if test="count(/data/param-pool/*[substring(name(),1,4) = 'url-']) &gt; 0">&amp;</xsl:if><xsl:value-of select="concat($param,'=',$value)" /></xsl:if>
+	<xsl:if test="not(/data/params/*[name() = concat('url-',$param)])"><xsl:if test="count(/data/params/*[substring(name(),1,4) = 'url-']) &gt; 0">&amp;</xsl:if><xsl:value-of select="concat($param,'=',$value)" /></xsl:if>
 </xsl:template>
 
 <xsl:template name="remove-get-param">
@@ -355,10 +355,10 @@
 	<xsl:param name="value" />
 	
 	<xsl:choose>
-		<xsl:when test="count(/data/param-pool/*[substring(name(),1,4) = 'url-']) &gt; 1 or contains(/data/param-pool/*[substring(name(),1,4) = 'url-'],',')">?</xsl:when>
+		<xsl:when test="count(/data/params/*[substring(name(),1,4) = 'url-']) &gt; 1 or contains(/data/params/*[substring(name(),1,4) = 'url-'],',')">?</xsl:when>
 		<xsl:otherwise>.</xsl:otherwise>
 	</xsl:choose>
-	<xsl:for-each select="/data/param-pool/*[substring(name(),1,4) = 'url-']">
+	<xsl:for-each select="/data/params/*[substring(name(),1,4) = 'url-']">
 		<xsl:variable name="current-param" select="substring(name(),5)" />
 		<xsl:variable name="new-value">
 			<xsl:choose>
