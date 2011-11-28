@@ -246,7 +246,7 @@
 	
 	<label><xsl:value-of select="$label" />
 		<select name="messages[{$field}]">
-			<xsl:apply-templates select="entry[@id = /data/index-projects/entry[@id = $issue-item/project/item/@id]/*[name() = 'administrators' or name() = 'contributors']/item/@id or none = 'Yes']" mode="option-tag">
+			<xsl:apply-templates select="entry[@id = /data/index-projects/entry[@id = $issue-item/project/item/@id or @id = /data/params/url-project]/*[name() = 'administrators' or name() = 'contributors']/item/@id or none = 'Yes']" mode="option-tag">
 				<xsl:with-param name="selected-value" select="$selected-value" />
 			</xsl:apply-templates>
 		</select>
@@ -261,7 +261,7 @@
 	
 	<label><xsl:value-of select="$label" />
 		<select name="messages[{$field}]">
-			<xsl:apply-templates select="entry[project/item/@id = $issue-item/project/item/@id or @id = /data/index-milestone/entry[none = 'Yes']/@id]" mode="option-tag">
+			<xsl:apply-templates select="entry[project/item/@id = $issue-item/project/item/@id or project/item/@id = /data/params/url-project or @id = /data/index-milestone/entry[none = 'Yes']/@id]" mode="option-tag">
 				<xsl:with-param name="selected-value" select="$selected-value" />
 			</xsl:apply-templates>
 		</select>
