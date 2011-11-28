@@ -15,30 +15,28 @@
 	indent="yes" />
 
 <xsl:template match="data">
-	<div id="sidebar">
-		<xsl:call-template name="create-issue" />
-		
-		<h2>Issue Stats</h2>
-		<h3>Activity</h3>
-		<xsl:call-template name="google-sparkline">
-			<xsl:with-param name="messages" select="issue-issue-messages/entry" />
-			<xsl:with-param name="width" select="'140'" />
-			<xsl:with-param name="height" select="'50'" />
-			<xsl:with-param name="color" select="'cccccc'" />
-		</xsl:call-template>
-		<h3>Progress</h3>
-		<xsl:call-template name="google-progress">
-			<xsl:with-param name="percentage" select="'0'" />
-			<xsl:with-param name="width" select="'140'" />
-			<xsl:with-param name="height" select="'140'" />
-			<xsl:with-param name="notcolor" select="'E6E6E6'" />
-		</xsl:call-template>
-	</div>
-	
 	<h2>Create New Issue</h2>
 	
 	<xsl:call-template name="update-form">
 		<xsl:with-param name="issue-item" select="." />
+	</xsl:call-template>
+</xsl:template>
+
+<xsl:template match="data" mode="sidebar">
+	<h2>Issue Stats</h2>
+	<h3>Activity</h3>
+	<xsl:call-template name="google-sparkline">
+		<xsl:with-param name="messages" select="issue-issue-messages/entry" />
+		<xsl:with-param name="width" select="'140'" />
+		<xsl:with-param name="height" select="'50'" />
+		<xsl:with-param name="color" select="'cccccc'" />
+	</xsl:call-template>
+	<h3>Progress</h3>
+	<xsl:call-template name="google-progress">
+		<xsl:with-param name="percentage" select="'0'" />
+		<xsl:with-param name="width" select="'140'" />
+		<xsl:with-param name="height" select="'140'" />
+		<xsl:with-param name="notcolor" select="'E6E6E6'" />
 	</xsl:call-template>
 </xsl:template>
 </xsl:stylesheet>

@@ -15,30 +15,6 @@
 	indent="yes" />
 
 <xsl:template match="data">
-	<div id="sidebar" class="issue">
-		<xsl:call-template name="create-issue" />
-		
-		<h2>Issue Stats</h2>
-		<h3>Activity</h3>
-		<xsl:call-template name="google-sparkline">
-			<xsl:with-param name="messages" select="issue-issue-messages/entry" />
-			<xsl:with-param name="width" select="'140'" />
-			<xsl:with-param name="height" select="'50'" />
-			<xsl:with-param name="bgcolor" select="'f6f6f6'" />
-		</xsl:call-template>
-		<h3>Progress</h3>
-		<xsl:call-template name="google-progress">
-			<xsl:with-param name="percentage">
-				<xsl:for-each select="/data/index-status/entry[@id = /data/issue-issue/entry/status/item/@id]">
-					<xsl:number />
-				</xsl:for-each>
-			</xsl:with-param>
-			<xsl:with-param name="maximum" select="count(/data/index-status/entry)" />
-			<xsl:with-param name="width" select="'140'" />
-			<xsl:with-param name="height" select="'140'" />
-		</xsl:call-template>
-	</div>
-
 	<h2>#<xsl:value-of select="issue-issue/entry/@id"/><xsl:text> </xsl:text><a href="."><xsl:value-of select="issue-issue/entry/title" /></a></h2>
 
 	<xsl:apply-templates select="issue-issue/entry" />
@@ -53,6 +29,30 @@
 		<xsl:with-param name="issue-item" select="issue-issue/entry"/>
 	</xsl:call-template>
 </xsl:template>
+
+<xsl:template match="data" mode="sidebar">
+	<h2>Issue Stats</h2>
+	<h3>Activity</h3>
+	<xsl:call-template name="google-sparkline">
+		<xsl:with-param name="messages" select="issue-issue-messages/entry" />
+		<xsl:with-param name="width" select="'140'" />
+		<xsl:with-param name="height" select="'50'" />
+		<xsl:with-param name="bgcolor" select="'f6f6f6'" />
+	</xsl:call-template>
+	<h3>Progress</h3>
+	<xsl:call-template name="google-progress">
+		<xsl:with-param name="percentage">
+			<xsl:for-each select="/data/index-status/entry[@id = /data/issue-issue/entry/status/item/@id]">
+				<xsl:number />
+			</xsl:for-each>
+		</xsl:with-param>
+		<xsl:with-param name="maximum" select="count(/data/index-status/entry)" />
+		<xsl:with-param name="width" select="'140'" />
+		<xsl:with-param name="height" select="'140'" />
+	</xsl:call-template>
+</xsl:template>
+
+<xsl:template match="data" mode="bodyclass">issue</xsl:template>
 
 <xsl:template match="issue-issue/entry">
 	<xsl:apply-templates select="." mode="attribute-list-infobar" />

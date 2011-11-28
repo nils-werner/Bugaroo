@@ -15,34 +15,32 @@
 	indent="yes" />
 
 <xsl:template match="data">
-	<div id="sidebar">
-		<xsl:call-template name="create-issue" />
-		
-		<xsl:call-template name="filter-form" />
-		<h2>Project Stats</h2>
-		<h3>Activity</h3>
-		<xsl:call-template name="google-sparkline">
-			<xsl:with-param name="messages" select="project-project-issues-messages/entry" />
-			<xsl:with-param name="width" select="'140'" />
-			<xsl:with-param name="height" select="'50'" />
-		</xsl:call-template>
-		<h3>Progress</h3>
-		<xsl:call-template name="google-progress">
-			<xsl:with-param name="percentage" select="100 div count(project-project-issues/entry) * count(project-project-issues/entry[status/item/@id = /data/index-status/entry[finished = 'Yes']/@id])" />
-			<xsl:with-param name="width" select="'140'" />
-			<xsl:with-param name="height" select="'140'" />
-		</xsl:call-template>
-		<h3>Issues</h3>
-		<xsl:apply-templates select="index-status" />
-		<h3>Milestones</h3>
-		<xsl:apply-templates select="project-project-milestones" />
-	</div>
-
 	<h2><xsl:value-of select="project-project/entry/title" /></h2>
 	
 	<xsl:apply-templates select="project-project" />
 	
 	<xsl:apply-templates select="project-project-issues-filtered" />
+</xsl:template>
+
+<xsl:template match="data" mode="sidebar">
+	<xsl:call-template name="filter-form" />
+	<h2>Project Stats</h2>
+	<h3>Activity</h3>
+	<xsl:call-template name="google-sparkline">
+		<xsl:with-param name="messages" select="project-project-issues-messages/entry" />
+		<xsl:with-param name="width" select="'140'" />
+		<xsl:with-param name="height" select="'50'" />
+	</xsl:call-template>
+	<h3>Progress</h3>
+	<xsl:call-template name="google-progress">
+		<xsl:with-param name="percentage" select="100 div count(project-project-issues/entry) * count(project-project-issues/entry[status/item/@id = /data/index-status/entry[finished = 'Yes']/@id])" />
+		<xsl:with-param name="width" select="'140'" />
+		<xsl:with-param name="height" select="'140'" />
+	</xsl:call-template>
+	<h3>Issues</h3>
+	<xsl:apply-templates select="index-status" />
+	<h3>Milestones</h3>
+	<xsl:apply-templates select="project-project-milestones" />
 </xsl:template>
 
 <xsl:template match="project-project">

@@ -16,30 +16,30 @@
 <xsl:variable name="user-id" select="'68'"/>
 
 <xsl:template match="data">
-	<div id="sidebar">
-		<h2>Personal Stats</h2>
-		<h3>Activity</h3>
-		<xsl:call-template name="google-sparkline">
-			<xsl:with-param name="messages" select="dashboard-projects-issues-messages/entry[creator/item/@id = $member-id]" />
-			<xsl:with-param name="width" select="'140'" />
-			<xsl:with-param name="height" select="'50'" />
-		</xsl:call-template>
-		<h3>Progress</h3>
-		<xsl:call-template name="google-progress">
-			<xsl:with-param name="percentage" select="100 div count(dashboard-projects-issues/entry) * count(dashboard-projects-issues/entry[status/item/@id = /data/index-status/entry[finished = 'Yes']/@id])" />
-			<xsl:with-param name="width" select="'140'" />
-			<xsl:with-param name="height" select="'140'" />
-		</xsl:call-template>
-		<h3>Issues</h3>
-		<ul>
-			<xsl:apply-templates select="/data/index-status/entry[dashboard = 'Yes']">
-				<xsl:with-param name="issues" select="/data/dashboard-projects-issues/entry" />
-			</xsl:apply-templates>
-		</ul>
-	</div>
-
 	<h2>My Projects</h2>
 	<xsl:apply-templates select="dashboard-projects" />
+</xsl:template>
+
+<xsl:template match="data" mode="sidebar">
+	<h2>Personal Stats</h2>
+	<h3>Activity</h3>
+	<xsl:call-template name="google-sparkline">
+		<xsl:with-param name="messages" select="dashboard-projects-issues-messages/entry[creator/item/@id = $member-id]" />
+		<xsl:with-param name="width" select="'140'" />
+		<xsl:with-param name="height" select="'50'" />
+	</xsl:call-template>
+	<h3>Progress</h3>
+	<xsl:call-template name="google-progress">
+		<xsl:with-param name="percentage" select="100 div count(dashboard-projects-issues/entry) * count(dashboard-projects-issues/entry[status/item/@id = /data/index-status/entry[finished = 'Yes']/@id])" />
+		<xsl:with-param name="width" select="'140'" />
+		<xsl:with-param name="height" select="'140'" />
+	</xsl:call-template>
+	<h3>Issues</h3>
+	<ul>
+		<xsl:apply-templates select="/data/index-status/entry[dashboard = 'Yes']">
+			<xsl:with-param name="issues" select="/data/dashboard-projects-issues/entry" />
+		</xsl:apply-templates>
+	</ul>
 </xsl:template>
 
 <!-- MAIN CONTENT -->

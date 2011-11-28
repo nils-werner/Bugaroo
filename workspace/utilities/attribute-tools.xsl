@@ -115,10 +115,6 @@
 	</ul>
 </xsl:template>
 
-<xsl:template name="create-issue">
-	<a id="create-issue" href="{$root}/issue/new/?project={/data/project-project/entry/@id}{/data/issue-issue/entry/project/item/@id}{/data/params/url-project}">Create Issue</a>
-</xsl:template>
-
 <xsl:template name="filter-form">
 	<xsl:variable name="default-value" select="'- All -'" />
 	

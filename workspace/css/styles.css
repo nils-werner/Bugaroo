@@ -346,11 +346,11 @@ hr {
 	left: 400px;
 }
 
-#sidebar.issue {
+.issue #sidebar {
 	padding-top: 100px;
 }
 
-#sidebar.issue #create-issue {
+.issue #sidebar #create-issue {
 	position: relative;
 	top: -80px;
 }

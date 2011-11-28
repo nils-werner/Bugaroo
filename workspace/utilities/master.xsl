@@ -61,9 +61,9 @@
 		<script type="text/javascript" src="{$workspace}/js/script.js" />
 	</head>
 	<body>
-
-<xsl:copy-of select="$index-projects" />
-
+		<xsl:attribute name="class">
+			<xsl:apply-templates mode="bodyclass"/>
+		</xsl:attribute>
 		<div id="masthead">
 			<h1>
 				<a href="{$root}"><xsl:value-of select="$website-name"/></a>
@@ -84,6 +84,10 @@
 				</span>
 			</p> -->
 			<div id="content">
+				<div id="sidebar">
+					<a id="create-issue" href="{$root}/issue/new/?project={/data/project-project/entry/@id}{/data/issue-issue/entry/project/item/@id}{/data/params/url-project}">Create Issue</a>
+					<xsl:apply-templates mode="sidebar"/>				
+				</div>
 				<xsl:apply-templates/>
 			</div>
 		<ul id="footer">
@@ -94,5 +98,8 @@
 </html>
 
 </xsl:template>
+
+<xsl:template match="data" mode="sidebar" />
+<xsl:template match="data" mode="bodyclass" />
 
 </xsl:stylesheet>
