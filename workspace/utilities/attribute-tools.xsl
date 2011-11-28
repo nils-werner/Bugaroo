@@ -87,31 +87,30 @@
 	</ul>
 </xsl:template>
 
-<xsl:template name="attribute-list-infobar">
-	<xsl:param name="node" />
+<xsl:template match="issue-issue/entry" mode="attribute-list-infobar">
 	
 	<ul>
 		<xsl:attribute name="id">infobar</xsl:attribute>
-		<xsl:attribute name="style">background-color: <xsl:value-of select="/data/index-status/entry[@id = $node/status/item/@id]/backgroundcolor" />; color: <xsl:value-of select="/data/index-status/entry[@id = $node/status/item/@id]/textcolor" />;</xsl:attribute>
+		<xsl:attribute name="style">background-color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/backgroundcolor" />; color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/textcolor" />;</xsl:attribute>
 		<li class="status">
 			<span>Status</span>
-			<xsl:value-of select="$node/status/item" />
+			<xsl:value-of select="./status/item" />
 		</li>
 		<li class="priority">
 			<span>Priority</span>
-			<xsl:value-of select="$node/priority/item" />
+			<xsl:value-of select="./priority/item" />
 		</li>
 		<li class="category auxiliary">
 			<span>Category</span>
-			<xsl:value-of select="$node/category/item" />
+			<xsl:value-of select="./category/item" />
 		</li>
 		<li class="milestone auxiliary">
 			<span>Milestone</span>
-			<xsl:value-of select="$node/milestone/item" />
+			<xsl:value-of select="./milestone/item" />
 		</li>
 		<li class="assignee auxiliary">
 			<span>Assignee</span>
-			<xsl:value-of select="$node/assignee/item" />
+			<xsl:value-of select="./assignee/item" />
 		</li>
 	</ul>
 </xsl:template>

@@ -55,9 +55,7 @@
 </xsl:template>
 
 <xsl:template match="issue-issue/entry">
-	<xsl:call-template name="attribute-list-infobar">
-		<xsl:with-param name="node" select="." />
-	</xsl:call-template>
+	<xsl:apply-templates select="." mode="attribute-list-infobar" />
 </xsl:template>
 
 <xsl:template match="issue-issue-messages/entry">
