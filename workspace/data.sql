@@ -1721,9 +1721,9 @@ CREATE TABLE `sym_url_router` (
   `type` enum('route','redirect') COLLATE utf8_unicode_ci DEFAULT 'route',
   `http301` enum('yes','no') COLLATE utf8_unicode_ci DEFAULT 'no',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `sym_url_router` ***
-INSERT INTO `sym_url_router` (`id`, `from`, `to`, `type`, `http301`) VALUES (20, ':project/:issue', '/issue/$2', 'route', 'no');
-INSERT INTO `sym_url_router` (`id`, `from`, `to`, `type`, `http301`) VALUES (21, ':project/new', '/issue/new/?project=$1', 'route', 'no');
-INSERT INTO `sym_url_router` (`id`, `from`, `to`, `type`, `http301`) VALUES (22, ':project', '/project/$1', 'route', 'no');
+INSERT INTO `sym_url_router` (`id`, `from`, `to`, `type`, `http301`) VALUES (23, ':project/:issue', '/issue/:issue', 'route', 'no');
+INSERT INTO `sym_url_router` (`id`, `from`, `to`, `type`, `http301`) VALUES (24, ':project/new', '/issue/new/?project=:project', 'route', 'no');
+INSERT INTO `sym_url_router` (`id`, `from`, `to`, `type`, `http301`) VALUES (25, ':project', '/project/:project', 'route', 'no');
