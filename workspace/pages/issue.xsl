@@ -29,12 +29,18 @@
 	
 	<xsl:variable name="default-value" select="'- No change -'" />
 
-	<form method="post" action="" enctype="multipart/form-data" id="update-form">
+	<form method="post" action="?debug" enctype="multipart/form-data" id="update-form">
 		<fieldset>
 			<legend>Update Issue</legend>
 			<div id="attributes">
-				<input type="hidden" name="messages[creator]" value="{$member-id}" />
-				<input type="hidden" name="messages[issue]" value="{$issue}" />
+				<input type="hidden" name="edit-issue[fields][id]" value="{issue-issue/entry/@id}" />
+				<input type="hidden" name="edit-issue[fields][title]" value="{issue-issue/entry/title}" />
+				<input type="hidden" name="edit-issue[fields][creator]" value="{issue-issue/entry/creator/item/@id}" />
+				<input type="hidden" name="edit-issue[fields][project]" value="{issue-issue/entry/project/item/@id}" />
+
+				<input type="hidden" name="edit-issue[fields][modifier]" value="{$member-id}" />
+				<input type="hidden" name="edit-message[fields][creator]" value="{$member-id}" />
+				<input type="hidden" name="edit-message[fields][issue]" value="{$issue}" />
 				
 				<xsl:apply-templates select="/data/index-status" mode="select">
 					<xsl:with-param name="issue-item" select="." />
@@ -51,29 +57,31 @@
 					<xsl:with-param name="selected-value" select="./category/item/@id" />
 				</xsl:apply-templates>
 				
-				<xsl:apply-templates select="/data/index-assignee" mode="select">
+				<xsl:apply-templates select="/data/project-project-contributors-assignees" mode="select">
 					<xsl:with-param name="issue-item" select="." />
 					<xsl:with-param name="selected-value" select="./assignee/item/@id" />
 					<xsl:with-param name="label" select="'Assign to'" />
 				</xsl:apply-templates>
 				
-				<xsl:apply-templates select="/data/index-milestone" mode="select">
+				<xsl:apply-templates select="/data/project-project-milestones" mode="select">
 					<xsl:with-param name="issue-item" select="." />
 					<xsl:with-param name="selected-value" select="./milestone/item/@id" />
 				</xsl:apply-templates>
 				
 				<label>Attachment
-					<input type="file" name="messages[file]" />
+					<input type="file" name="edit-message[fields][file]" />
 				</label>
 			</div>
 			
 			<input name="MAX_FILE_SIZE" type="hidden" value="5242880" />
 			<label>Description
-				<textarea name="messages[description]" rows="15" cols="50"></textarea>
+				<textarea name="edit-message[fields][description]" rows="15" cols="50"></textarea>
 			</label>
 			<label class="submit">Absenden
-				<input name="action[save-message]" type="submit" value="Submit" />
+				<input name="action[edit-message]" type="submit" value="Submit" />
 			</label>
+
+ 			<input name="action[edit-issue]" type="hidden" value="Submit" />
 		</fieldset>
 		<a class="cancel" href="javascript:history:back()">Cancel and go back</a>
 	</form>

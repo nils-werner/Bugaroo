@@ -20,11 +20,17 @@
 	
 	<xsl:variable name="default-value" select="'- No change -'" />
 
-	<form method="post" action="" enctype="multipart/form-data" id="update-form">
+	<form method="post" action="?debug" enctype="multipart/form-data" id="update-form">
 		<fieldset>
 			<legend>Update Issue</legend>
 			<div id="attributes">
-				<input type="hidden" name="messages[creator]" value="{$member-id}" />
+				<input type="hidden" name="fields[creator]" value="{$member-id}" />
+				<input type="hidden" name="edit-issue[fields][modifier]" value="{$member-id}" />
+				<input type="hidden" name="edit-issue[fields][project]" value="{$ds-project-project}" />
+
+				<label>Title
+					<input type="text" name="edit-issue[fields][title]" />
+				</label>
 				
 				<xsl:apply-templates select="/data/index-status" mode="select">
 					<xsl:with-param name="issue-item" select="." />
@@ -41,13 +47,13 @@
 					<xsl:with-param name="selected-value" select="./category/item/@id" />
 				</xsl:apply-templates>
 				
-				<xsl:apply-templates select="/data/index-assignee" mode="select">
+				<xsl:apply-templates select="/data/project-project-contributors-assignees" mode="select">
 					<xsl:with-param name="issue-item" select="." />
 					<xsl:with-param name="selected-value" select="./assignee/item/@id" />
 					<xsl:with-param name="label" select="'Assign to'" />
 				</xsl:apply-templates>
 				
-				<xsl:apply-templates select="/data/index-milestone" mode="select">
+				<xsl:apply-templates select="/data/project-project-milestones" mode="select">
 					<xsl:with-param name="issue-item" select="." />
 					<xsl:with-param name="selected-value" select="./milestone/item/@id" />
 				</xsl:apply-templates>
@@ -62,8 +68,11 @@
 				<textarea name="messages[description]" rows="15" cols="50"></textarea>
 			</label>
 			<label class="submit">Absenden
-				<input name="action[save-message]" type="submit" value="Submit" />
+				<input name="action[edit-message]" type="submit" value="Submit" />
 			</label>
+
+ 			<input name="action[edit-issue]" type="hidden" value="Submit" />
+
 		</fieldset>
 		<a class="cancel" href="javascript:history:back()">Cancel and go back</a>
 	</form>

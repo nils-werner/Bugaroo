@@ -16,7 +16,7 @@
 	<xsl:param name="selected-value" select="$issue-item/*[name() = $field]/item/@id" />
 	
 	<label><xsl:value-of select="$label" />
-		<select name="messages[{$field}]">
+		<select name="fields[{$field}]">
 			<xsl:apply-templates select="entry" mode="option-tag">
 				<xsl:with-param name="selected-value" select="$selected-value" />
 			</xsl:apply-templates>
@@ -29,15 +29,15 @@
 
 
 
-<xsl:template match="index-assignee" mode="select">
-	<xsl:param name="field" select="substring-after(name(),'index-')" />
+<xsl:template match="project-project-contributors-assignees" mode="select">
+	<xsl:param name="field" select="'assignee'" />
 	<xsl:param name="label" select="section" />
 	<xsl:param name="issue-item" />
 	<xsl:param name="selected-value" select="$issue-item/*[name() = $field]/item/@id" />
 	
 	<label><xsl:value-of select="$label" />
-		<select name="messages[{$field}]">
-			<xsl:apply-templates select="entry[@id = /data/index-projects/entry[@id = $issue-item/project/item/@id or @id = /data/params/url-project]/*[name() = 'administrators' or name() = 'contributors']/item/@id or none = 'Yes']" mode="option-tag">
+		<select name="fields[{$field}]">			
+			<xsl:apply-templates select="entry" mode="option-tag">
 				<xsl:with-param name="selected-value" select="$selected-value" />
 			</xsl:apply-templates>
 		</select>
@@ -49,15 +49,15 @@
 
 
 
-<xsl:template match="index-milestone" mode="select">
-	<xsl:param name="field" select="substring-after(name(),'index-')" />
+<xsl:template match="project-project-milestones" mode="select">
+	<xsl:param name="field" select="'milestone'" />
 	<xsl:param name="label" select="section" />
 	<xsl:param name="issue-item" />
 	<xsl:param name="selected-value" select="$issue-item/*[name() = $field]/item/@id" />
 	
 	<label><xsl:value-of select="$label" />
-		<select name="messages[{$field}]">
-			<xsl:apply-templates select="entry[project/item/@id = $issue-item/project/item/@id or project/item/@id = /data/params/url-project or @id = /data/index-milestone/entry[none = 'Yes']/@id]" mode="option-tag">
+		<select name="fields[{$field}]">
+			<xsl:apply-templates select="entry" mode="option-tag">
 				<xsl:with-param name="selected-value" select="$selected-value" />
 			</xsl:apply-templates>
 		</select>

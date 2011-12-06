@@ -73,11 +73,17 @@
 		}
 
 		public function load(){
+			$this->post = $_POST;
 			if(isset($_POST['action']['edit-message'])) return $this->__trigger();
 		}
 
 		protected function __trigger(){
+			$_POST['fields'] = array_merge($this->post[self::ROOTELEMENT]['fields'],$this->post['fields']);
+
 			include(TOOLKIT . '/events/event.section.php');
+
+			$_POST = $this->post;
+			
 			return $result;
 		}
 

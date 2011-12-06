@@ -27,8 +27,12 @@
 			return '12';
 		}
 
+		public function priority(){
+			return self::kHIGH;
+		}
+
 		public static function allowEditorToParse(){
-			return true;
+			return false;
 		}
 
 		public static function documentation(){
@@ -74,11 +78,24 @@
 		}
 
 		public function load(){
+			$this->post = $_POST;
 			if(isset($_POST['action']['edit-issue'])) return $this->__trigger();
 		}
 
 		protected function __trigger(){
+			unset($_POST['fields']);
+			$_POST['fields'] = array_merge($this->post[self::ROOTELEMENT]['fields'],$this->post['fields']);
+			$_POST['id'] = $_POST['fields']['id'];
+
 			include(TOOLKIT . '/events/event.section.php');
+
+			$_POST = $this->post;
+
+			if($result->getAttribute('result') == "success") {
+				$_POST['action']['edit-message'] = 'Submit';
+				$_POST['fields']['issue'] = $result->getAttribute('id');
+			}
+
 			return $result;
 		}
 

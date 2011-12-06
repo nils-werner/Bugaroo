@@ -2,45 +2,47 @@
 
 	require_once(TOOLKIT . '/class.datasource.php');
 
-	Class datasourceindex_issues extends Datasource{
+	Class datasourceproject_project_contributors_assignees extends Datasource{
 
-		public $dsParamROOTELEMENT = 'index-issues';
+		public $dsParamROOTELEMENT = 'project-project-contributors-assignees';
 		public $dsParamORDER = 'desc';
-		public $dsParamPAGINATERESULTS = 'yes';
+		public $dsParamPAGINATERESULTS = 'no';
 		public $dsParamLIMIT = '20';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'system:id';
-		public $dsParamASSOCIATEDENTRYCOUNTS = 'yes';
+		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
 
-		
+		public $dsParamFILTERS = array(
+				'id' => '{$ds-project-project-contributors,74}',
+		);
 
 		public $dsParamINCLUDEDELEMENTS = array(
-				'description: formatted',
-				'date',
-				'issue'
+				'name',
+				'username',
+				'role'
 		);
 
 
 		public function __construct(&$parent, $env=NULL, $process_params=true){
 			parent::__construct($parent, $env, $process_params);
-			$this->_dependencies = array();
+			$this->_dependencies = array('$ds-project-project-contributors');
 		}
 
 		public function about(){
 			return array(
-				'name' => 'Index Issues',
+				'name' => 'Project Project Contributors Assignees',
 				'author' => array(
 					'name' => 'Default Administrator',
 					'website' => 'http://bugaroo.localhost',
 					'email' => 'nobody@bugaroo.symphony-cms.com'),
 				'version' => 'Symphony 2.2.2',
-				'release-date' => '2011-12-06T09:43:35+00:00'
+				'release-date' => '2011-12-06T09:50:47+00:00'
 			);
 		}
 
 		public function getSource(){
-			return '13';
+			return '15';
 		}
 
 		public function allowEditorToParse(){
