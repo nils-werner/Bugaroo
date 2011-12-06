@@ -29,14 +29,19 @@
 	
 	<xsl:variable name="default-value" select="'- No change -'" />
 
+	<xsl:apply-templates select="issue-issue/entry" mode="form"/>
+</xsl:template>
+
+
+<xsl:template match="issue-issue/entry" mode="form">
 	<form method="post" action="?debug" enctype="multipart/form-data" id="update-form">
 		<fieldset>
 			<legend>Update Issue</legend>
 			<div id="attributes">
-				<input type="hidden" name="edit-issue[fields][id]" value="{issue-issue/entry/@id}" />
-				<input type="hidden" name="edit-issue[fields][title]" value="{issue-issue/entry/title}" />
-				<input type="hidden" name="edit-issue[fields][creator]" value="{issue-issue/entry/creator/item/@id}" />
-				<input type="hidden" name="edit-issue[fields][project]" value="{issue-issue/entry/project/item/@id}" />
+				<input type="hidden" name="edit-issue[fields][id]" value="{./@id}" />
+				<input type="hidden" name="edit-issue[fields][title]" value="{./title}" />
+				<input type="hidden" name="edit-issue[fields][creator]" value="{./creator/item/@id}" />
+				<input type="hidden" name="edit-issue[fields][project]" value="{./project/item/@id}" />
 
 				<input type="hidden" name="edit-issue[fields][modifier]" value="{$member-id}" />
 				<input type="hidden" name="edit-message[fields][creator]" value="{$member-id}" />
@@ -86,9 +91,6 @@
 		<a class="cancel" href="javascript:history:back()">Cancel and go back</a>
 	</form>
 </xsl:template>
-
-
-
 
 
 <xsl:template match="data" mode="sidebar">

@@ -73,15 +73,10 @@
 	<xsl:param name="selected-value" select="''" />
 	
 	<option>
-		<xsl:choose>
-			<xsl:when test="@id = $selected-value">
-				<xsl:attribute name="selected">selected</xsl:attribute>
-				<xsl:attribute name="value"></xsl:attribute>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:attribute name="value"><xsl:value-of select="@id" /></xsl:attribute>
-			</xsl:otherwise>
-		</xsl:choose>
+		<xsl:if test="@id = $selected-value">
+			<xsl:attribute name="selected">selected</xsl:attribute>
+		</xsl:if>
+		<xsl:attribute name="value"><xsl:value-of select="@id" /></xsl:attribute>
 		<xsl:value-of select="title | name" />
 	</option>
 </xsl:template>

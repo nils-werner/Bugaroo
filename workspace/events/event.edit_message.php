@@ -78,7 +78,10 @@
 		}
 
 		protected function __trigger(){
-			$_POST['fields'] = array_merge($this->post[self::ROOTELEMENT]['fields'],$this->post['fields']);
+			if(!empty($this->post[self::ROOTELEMENT]['fields']))
+				$_POST['fields'] = array_merge($this->post[self::ROOTELEMENT]['fields'],$this->post['fields']);
+			else
+				$_POST['fields'] = $this->post['fields'];
 
 			include(TOOLKIT . '/events/event.section.php');
 
