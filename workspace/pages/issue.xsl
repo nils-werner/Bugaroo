@@ -74,7 +74,7 @@
 				</xsl:apply-templates>
 				
 				<label>Attachment
-					<input type="file" name="edit-message[fields][file]" />
+					<input type="file" name="fields[file]" />
 				</label>
 			</div>
 			

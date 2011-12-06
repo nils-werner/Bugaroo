@@ -55,13 +55,13 @@
 				</xsl:apply-templates>
 				
 				<label>Attachment
-					<input type="file" name="messages[file]" />
+					<input type="file" name="fields[file]" />
 				</label>
 			</div>
 			
 			<input name="MAX_FILE_SIZE" type="hidden" value="5242880" />
 			<label>Description
-				<textarea name="messages[description]" rows="15" cols="50"></textarea>
+				<textarea name="edit-message[fields][description]" rows="15" cols="50"></textarea>
 			</label>
 			<label class="submit">Absenden
 				<input name="action[edit-message]" type="submit" value="Submit" />
