@@ -89,7 +89,7 @@
 
 		###### GLOBALRESOURCELOADER ######
 		'globalresourceloader' => array(
-			'ds-names' => 'index_category,index_priority,index_status,member_details',
+			'ds-names' => 'index_category,index_priority,index_status,member_details,index_anonymous',
 			'ds-pages' => '75,76',
 		),
 		########
@@ -111,7 +111,7 @@
 
 		###### DUMP_DB ######
 		'dump_db' => array(
-			'last_sync' => '2011-12-06T11:17:26+01:00',
+			'last_sync' => '2011-12-06T17:05:54+01:00',
 		),
 		########
 

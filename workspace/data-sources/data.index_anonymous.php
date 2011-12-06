@@ -2,42 +2,38 @@
 
 	require_once(TOOLKIT . '/class.datasource.php');
 
-	Class datasourceproject_project_contributors_assignees extends Datasource{
+	Class datasourceindex_anonymous extends Datasource{
 
-		public $dsParamROOTELEMENT = 'project-project-contributors-assignees';
+		public $dsParamROOTELEMENT = 'index-anonymous';
 		public $dsParamORDER = 'desc';
-		public $dsParamPAGINATERESULTS = 'no';
-		public $dsParamLIMIT = '20';
+		public $dsParamPAGINATERESULTS = 'yes';
+		public $dsParamLIMIT = '1';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
+		public $dsParamPARAMOUTPUT = 'system:id';
 		public $dsParamSORT = 'system:id';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
 
 		public $dsParamFILTERS = array(
-				'id' => '{$ds-project-project-contributors,$ds-index-anonymous}',
+				'95' => 'Nobody',
 		);
 
-		public $dsParamINCLUDEDELEMENTS = array(
-				'name',
-				'username',
-				'role'
-		);
-
+		
 
 		public function __construct(&$parent, $env=NULL, $process_params=true){
 			parent::__construct($parent, $env, $process_params);
-			$this->_dependencies = array('$ds-project-project-contributors', '$ds-index-anonymous');
+			$this->_dependencies = array();
 		}
 
 		public function about(){
 			return array(
-				'name' => 'Project: Project>Contributors>Assignees',
+				'name' => 'Index: Anonymous',
 				'author' => array(
 					'name' => 'Default Administrator',
 					'website' => 'http://bugaroo.localhost',
 					'email' => 'nobody@bugaroo.symphony-cms.com'),
 				'version' => 'Symphony 2.2.2',
-				'release-date' => '2011-12-06T16:10:47+00:00'
+				'release-date' => '2011-12-06T16:10:02+00:00'
 			);
 		}
 
