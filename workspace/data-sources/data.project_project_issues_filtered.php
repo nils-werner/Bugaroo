@@ -51,7 +51,7 @@
 		
 		public function about(){
 			return array(
-					 'name' => 'Project Project Issues Filtered',
+					 'name' => 'Project: Project>Issues>Filtered',
 					 'author' => array(
 							'name' => 'Nils Werner',
 							'website' => 'http://trac.obsessive-media.de.localhost',

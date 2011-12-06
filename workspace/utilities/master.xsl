@@ -19,34 +19,6 @@
 <xsl:variable name="is-admin" select="/data/events/login-info/@logged-in"/>
 <xsl:variable name="query-string" select="substring-after($current-path,'?')" />
 
-<!-- index-variables depending on page -->
-<xsl:variable name="index-status" select="/data/index-status/entry" />
-<xsl:variable name="index-priority" select="/data/index-priority/entry" />
-<xsl:variable name="index-category" select="/data/index-category/entry" />
-
-<xsl:variable name="index-projects">
-	<xsl:choose>
-		<xsl:when test="$current-page = 'dashboard'">
-			<xsl:copy-of select="/data/index-projects/entry[contributors/item/@id = user-id or administrators/item/@id = user-id]" />
-		</xsl:when>
-		<xsl:when test="$current-page = 'project'">
-			<xsl:copy-of select="/data/index-projects/entry[contributors/item/@id = user-id or administrators/item/@id = user-id]" />
-		</xsl:when>
-		<xsl:when test="$current-page = 'issue'">
-			<xsl:copy-of select="/data/index-projects/entry[@id = /data/issue-issue/entry/project/item/@id]" />
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:copy-of select="/data/index-projects/entry" />
-		</xsl:otherwise>
-	</xsl:choose>
-</xsl:variable>
-
-
-
-<!--
-<xsl:variable name="index-milestone" select="/data/index-milestone/entry[project/item/@id = $index-project/entry/@id or none = 'Yes']" />
-<xsl:variable name="index-assignee" select="/data/index-assignee/entry[project/item/@id = $index-project/entry/@id or none = 'Yes']" />
--->
 
 <xsl:template match="/">
 <html>

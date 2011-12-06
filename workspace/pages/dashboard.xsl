@@ -60,14 +60,14 @@
 <xsl:template match="dashboard-projects">
 	<h3>Starred projects</h3>
 	<ul id="dashboard">
-		<xsl:apply-templates select="entry[@id = /data/index-assignee/entry[@id = $member-id]/detailed/item/@id and not(@id = /data/index-assignee/entry[@id = $member-id]/hide/item/@id)]" mode="detailed" />
+		<xsl:apply-templates select="entry[@id = /data/member-details/entry/detailed/item/@id and not(@id = /data/member-details/entry/hide/item/@id)]" mode="detailed" />
 		<xsl:if test="not(entry)">
 			<li>There are no projects matching your criteria</li>
 		</xsl:if>
 	</ul>
 	<h3>Other projects</h3>
 	<ul id="dashboard-other">
-		<xsl:apply-templates select="entry[@id != /data/index-assignee/entry[@id = $member-id]/detailed/item/@id and not(@id = /data/index-assignee/entry[@id = $member-id]/hide/item/@id)]" />
+		<xsl:apply-templates select="entry[@id != /data/member-details/entry/detailed/item/@id and not(@id = /data/member-details/entry/hide/item/@id)]" />
 		<xsl:if test="not(entry)">
 			<li>There are no projects matching your criteria</li>
 		</xsl:if>

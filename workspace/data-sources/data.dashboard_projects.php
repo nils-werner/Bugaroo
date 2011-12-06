@@ -6,7 +6,7 @@
 
 		public $dsParamROOTELEMENT = 'dashboard-projects';
 		public $dsParamORDER = 'asc';
-		public $dsParamPAGINATERESULTS = 'yes';
+		public $dsParamPAGINATERESULTS = 'no';
 		public $dsParamLIMIT = '20';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
@@ -35,13 +35,13 @@
 
 		public function about(){
 			return array(
-				'name' => 'Dashboard Projects',
+				'name' => 'Dashboard: Projects',
 				'author' => array(
 					'name' => 'Default Administrator',
 					'website' => 'http://bugaroo.localhost',
 					'email' => 'nobody@bugaroo.symphony-cms.com'),
 				'version' => 'Symphony 2.2.2',
-				'release-date' => '2011-11-28T10:34:43+00:00'
+				'release-date' => '2011-12-06T14:44:23+00:00'
 			);
 		}
 

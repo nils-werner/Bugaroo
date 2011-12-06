@@ -2,23 +2,31 @@
 
 	require_once(TOOLKIT . '/class.datasource.php');
 
-	Class datasourceindex_issues extends Datasource{
+	Class datasourcemember_details extends Datasource{
 
-		public $dsParamROOTELEMENT = 'index-issues';
+		public $dsParamROOTELEMENT = 'member-details';
 		public $dsParamORDER = 'desc';
 		public $dsParamPAGINATERESULTS = 'yes';
-		public $dsParamLIMIT = '20';
+		public $dsParamLIMIT = '1';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
 		public $dsParamSORT = 'system:id';
-		public $dsParamASSOCIATEDENTRYCOUNTS = 'yes';
+		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
 
-		
+		public $dsParamFILTERS = array(
+				'id' => '{$member-id}',
+		);
 
 		public $dsParamINCLUDEDELEMENTS = array(
-				'description: formatted',
-				'date',
-				'issue'
+				'name',
+				'username',
+				'email',
+				'role',
+				'role: permissions',
+				'company',
+				'detailed',
+				'hide',
+				'subscriptions'
 		);
 
 
@@ -29,18 +37,18 @@
 
 		public function about(){
 			return array(
-				'name' => 'Index Issues',
+				'name' => 'Member Details',
 				'author' => array(
 					'name' => 'Default Administrator',
 					'website' => 'http://bugaroo.localhost',
 					'email' => 'nobody@bugaroo.symphony-cms.com'),
 				'version' => 'Symphony 2.2.2',
-				'release-date' => '2011-12-06T09:43:35+00:00'
+				'release-date' => '2011-12-06T14:51:10+00:00'
 			);
 		}
 
 		public function getSource(){
-			return '13';
+			return '15';
 		}
 
 		public function allowEditorToParse(){

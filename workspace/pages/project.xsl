@@ -48,13 +48,15 @@
 		<xsl:with-param name="default-caption" select="'(none)'" />
 	</xsl:apply-templates>
 	
-	<xsl:apply-templates select="/data/index-assignee" mode="links" >
+	<xsl:apply-templates select="/data/project-project-contributors-assignees" mode="links" >
+		<xsl:with-param name="field" select="'assignee'" />
 		<xsl:with-param name="label" select="'Assigned to'" />
 		<xsl:with-param name="default-value" select="'null'" />
 		<xsl:with-param name="default-caption" select="'(nobody)'" />
 	</xsl:apply-templates>
 	
-	<xsl:apply-templates select="/data/index-milestone" mode="links">
+	<xsl:apply-templates select="/data/project-project-milestones" mode="links">
+		<xsl:with-param name="field" select="'milestone'" />
 		<xsl:with-param name="default-value" select="'null'" />
 		<xsl:with-param name="default-caption" select="'(none)'" />
 	</xsl:apply-templates>

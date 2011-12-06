@@ -153,7 +153,7 @@
 	<p class="changes">
 		<xsl:choose>
 			<xsl:when test="position() = 1">
-				<xsl:apply-templates select="priority | status | category[@id != /data/index-category/entry[none = 'Yes']/@id] | assignee[@id != /data/index-assignee/entry[none = 'Yes']/@id] | milestone[@id != /data/index-milestone/entry[none = 'Yes']/@id]" />
+				<xsl:apply-templates select="priority | status | category[@id != /data/index-category/entry[none = 'Yes']/@id] | assignee[@id != /data/project-project-contributors-assignees/entry[none = 'Yes']/@id] | milestone[@id != /data/index-milestone/entry[none = 'Yes']/@id]" />
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:apply-templates select="priority | status | category | assignee | milestone" />

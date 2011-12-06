@@ -36,13 +36,13 @@
 
 		public function about(){
 			return array(
-				'name' => 'Project Project',
+				'name' => 'Project: Project',
 				'author' => array(
 					'name' => 'Default Administrator',
 					'website' => 'http://bugaroo.localhost',
 					'email' => 'nobody@bugaroo.symphony-cms.com'),
 				'version' => 'Symphony 2.2.2',
-				'release-date' => '2011-11-28T10:35:48+00:00'
+				'release-date' => '2011-12-06T14:46:40+00:00'
 			);
 		}
 

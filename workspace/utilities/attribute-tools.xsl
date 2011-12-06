@@ -9,7 +9,7 @@
 
 
 
-<xsl:template match="index-users | index-category | index-priority | index-status" mode="select">
+<xsl:template match="index-category | index-priority | index-status" mode="select">
 	<xsl:param name="field" select="substring-after(name(),'index-')" />
 	<xsl:param name="label" select="section" />
 	<xsl:param name="issue-item" />
@@ -86,7 +86,8 @@
 
 
 
-<xsl:template match="index-users | index-category | index-priority | index-milestone | index-status | index-assignee" mode="links">
+
+<xsl:template match="index-category | index-priority | index-status | project-project-milestones | project-project-contributors-assignees" mode="links">
 	<xsl:param name="field" select="substring-after(name(),'index-')" />
 	<xsl:param name="label" select="section" />
 	<xsl:param name="default-value" select="''" />
@@ -97,13 +98,7 @@
 			<xsl:attribute name="class">selected</xsl:attribute>
 		</xsl:if>
 		<xsl:value-of select="$label" />
-		<xsl:apply-templates select="entry[
-					(name(current()) = 'index-milestone' and (project/item/@handle = $project or @id = /data/index-milestone/entry[none = 'Yes']/@id))
-					 or 
-					(name(current()) = 'index-assignee' and (@id = /data/index-projects/entry[title/@handle = $project]/*[name() = 'administrators' or name() = 'contributors']/item/@id or none = 'Yes'))
-					or
-					(name(current()) != 'index-milestone' and name(current()) != 'index-assignee')
-					]" mode="link">
+		<xsl:apply-templates select="entry" mode="link">
 			<xsl:with-param name="selected-value" select="/data/params/*[name() = concat('url-',$field)]" />
 			<xsl:with-param name="name" select="$field" />
 		</xsl:apply-templates>

@@ -55,7 +55,7 @@
 			'query_caching' => 'default',
 			'host' => 'localhost',
 			'port' => '3306',
-			'user' => '',
+			'user' => 'nils',
 			'password' => null,
 			'db' => 'bugaroo',
 			'tbl_prefix' => 'sym_',
@@ -89,7 +89,7 @@
 
 		###### GLOBALRESOURCELOADER ######
 		'globalresourceloader' => array(
-			'ds-names' => 'index_assignee,index_category,index_issues,index_milestone,index_priority,index_projects,index_status',
+			'ds-names' => 'index_category,index_priority,index_status,member_details',
 			'ds-pages' => '75,76',
 		),
 		########
@@ -111,7 +111,7 @@
 
 		###### DUMP_DB ######
 		'dump_db' => array(
-			'last_sync' => '2011-08-04T11:50:57+02:00',
+			'last_sync' => '2011-12-06T11:17:26+01:00',
 		),
 		########
 
