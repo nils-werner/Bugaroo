@@ -34,7 +34,7 @@
 
 
 <xsl:template match="issue-issue/entry" mode="form">
-	<form method="post" action="?debug" enctype="multipart/form-data" id="update-form">
+	<form method="post" action="" enctype="multipart/form-data" id="update-form">
 		<fieldset>
 			<legend>Update Issue</legend>
 			<div id="attributes">

@@ -20,7 +20,7 @@
 	
 	<xsl:variable name="default-value" select="'- No change -'" />
 
-	<form method="post" action="?debug" enctype="multipart/form-data" id="update-form">
+	<form method="post" action="" enctype="multipart/form-data" id="update-form">
 		<fieldset>
 			<legend>Update Issue</legend>
 			<div id="attributes">
