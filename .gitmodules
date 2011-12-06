@@ -40,3 +40,6 @@
 [submodule "extensions/url_router"]
 	path = extensions/url_router
 	url = git://github.com/symphonists/url_router.git
+[submodule "extensions/uniqueuploadfield"]
+	path = extensions/uniqueuploadfield
+	url = git://github.com/michael-e/uniqueuploadfield.git
