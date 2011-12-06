@@ -31,20 +31,14 @@ This util assumes that your master matches "/" and your page matches "data".
 			<p>Please enter your email address and password below.</p>
 			
 			<form action="" method="POST">
-				<div>
-					<div class="clearfix">
-						<p>
-							<label>Email address
-								<input name="fields[email]" type="text" value="/data/events/member-login-info/postvalues/email" id="username" />
-							</label>
-						</p>
-						<p>
-							<label for="password">Password
-								<input name="fields[password]" type="password" id="password" />
-							</label>
-						</p>
-					</div>
-				</div>
+				<fieldset>
+					<label>Email address
+						<input name="fields[email]" type="text" value="{/data/events/member-login-info/postvalues/email}" id="username" />
+					</label>
+					<label for="password">Password
+						<input name="fields[password]" type="password" id="password" />
+					</label>
+				</fieldset>
 				
 		
 				<p><button type="submit" class="login" name="member-action[login]">Log in</button></p>

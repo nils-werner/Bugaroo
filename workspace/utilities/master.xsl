@@ -68,7 +68,9 @@
 			<h1>
 				<a href="{$root}"><xsl:value-of select="$website-name"/></a>
 			</h1>
-			<xsl:apply-templates select="data/system-navigation"/>
+			<a href="?member-action=logout" id="logout">
+				Logout
+			</a>
 		</div>
 		<div id="package">
 			<!-- <p class="date">

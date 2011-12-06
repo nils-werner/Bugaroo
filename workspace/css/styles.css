@@ -15,6 +15,18 @@ body {
 	margin-top: 60px;
 	margin-bottom: 5px;
 	position: relative;
+	overflow: hidden;
+}
+
+h1 {
+	float: left;
+}
+
+#logout {
+	margin-top: 55px;
+	margin-right: 10px;
+	float: right;
+	color: #CC4444;
 }
 
 #package {
