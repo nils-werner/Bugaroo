@@ -27,15 +27,11 @@
 				<input type="hidden" name="fields[creator]" value="{$member-id}" />
 				<input type="hidden" name="edit-issue[fields][modifier]" value="{$member-id}" />
 				<input type="hidden" name="edit-issue[fields][project]" value="{$ds-project-project}" />
+				<input type="hidden" name="fields[status]" value="{/data/index-status/entry[1]/@id}" />
 
 				<label>Title
 					<input type="text" name="edit-issue[fields][title]" />
 				</label>
-				
-				<xsl:apply-templates select="/data/index-status" mode="select">
-					<xsl:with-param name="issue-item" select="." />
-					<xsl:with-param name="selected-value" select="./status/item/@id" />
-				</xsl:apply-templates>
 				
 				<xsl:apply-templates select="/data/index-priority" mode="select">
 					<xsl:with-param name="issue-item" select="." />
