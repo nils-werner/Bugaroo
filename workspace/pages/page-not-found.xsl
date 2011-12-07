@@ -17,12 +17,17 @@
 				<xsl:call-template name="page-title"/>
 			</title>
 			<link rel="icon" type="images/png" href="{$workspace}/images/icons/bookmark.png" />
-			<link rel="stylesheet" type="text/css" media="screen" href="{$workspace}/css/maintenance.css" />
+			<link rel="stylesheet" type="text/css" media="screen" href="{$workspace}/css/styles.css" />
 		</head>
 		<body>
-			<div id="package">
-				<h1>404 Error: Page Not Found</h1>
-				<p>Head back to <a href="{$root}/">home</a> or <a href="{$root}/about/">contact</a> me.</p>
+		<div id="masthead">
+			<h1>
+				<a href="{$root}"><xsl:value-of select="$website-name"/></a>
+			</h1>
+		</div>
+		<div id="package">
+				<h2>404 Error: Page Not Found</h2>
+				<p>Head back to <a href="{$root}/">home</a>.</p>
 			</div>
 		</body>
 	</html>

@@ -17,11 +17,16 @@
 				<xsl:call-template name="page-title"/>
 			</title>
 			<link rel="icon" type="images/png" href="{$workspace}/images/icons/bookmark.png" />
-			<link rel="stylesheet" type="text/css" media="screen" href="{$workspace}/css/maintenance.css" />
+			<link rel="stylesheet" type="text/css" media="screen" href="{$workspace}/css/styles.css" />
 		</head>
 		<body>
+			<div id="masthead">
+				<h1>
+					<a href="{$root}"><xsl:value-of select="$website-name"/></a>
+				</h1>
+			</div>
 			<div id="package">
-				<h1>Maintenance</h1>
+				<h2>Maintenance</h2>
 				<p><xsl:value-of select="$website-name"/> is currently in maintenance. Please check back later.</p>
 			</div>
 		</body>
