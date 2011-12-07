@@ -15,23 +15,54 @@
 	indent="yes" />
 
 
-
 <xsl:template match="data">
-	<h2>#<xsl:value-of select="issue-issue/entry/@id"/><xsl:text> </xsl:text><a href="."><xsl:value-of select="issue-issue/entry/title" /></a></h2>
-
 	<xsl:apply-templates select="issue-issue/entry" />
-	
-	<p id="back">
-		<a href="../">&#8592; <xsl:value-of select="issue-issue/entry/project/item" /></a>
-	</p>
-	
-	<xsl:apply-templates select="issue-issue-messages/entry" />
-	
-	<xsl:variable name="default-value" select="'- No change -'" />
-
-	<xsl:apply-templates select="issue-issue/entry" mode="form"/>
 </xsl:template>
 
+<!--
+ *
+ *
+ * ISSUE
+ *
+ *
+-->
+
+<xsl:template match="issue-issue/entry">
+	<h2>#<xsl:value-of select="@id"/><xsl:text> </xsl:text><a href="."><xsl:value-of select="title" /></a></h2>
+	<xsl:apply-templates select="." mode="infobar" />
+	<p id="back">
+		<a href="../">&#8592; <xsl:value-of select="project/item" /></a>
+	</p>
+	<xsl:apply-templates select="/data/issue-issue-messages/entry" />
+	<xsl:apply-templates select="." mode="form"/>
+</xsl:template>
+
+<xsl:template match="issue-issue/entry" mode="infobar">
+	<ul>
+		<xsl:attribute name="id">infobar</xsl:attribute>
+		<xsl:attribute name="style">background-color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/backgroundcolor" />; color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/textcolor" />;</xsl:attribute>
+		<li class="status">
+			<span>Status</span>
+			<xsl:value-of select="./status/item" />
+		</li>
+		<li class="priority">
+			<span>Priority</span>
+			<xsl:value-of select="./priority/item" />
+		</li>
+		<li class="category auxiliary">
+			<span>Category</span>
+			<xsl:value-of select="./category/item" />
+		</li>
+		<li class="milestone auxiliary">
+			<span>Milestone</span>
+			<xsl:value-of select="./milestone/item" />
+		</li>
+		<li class="assignee auxiliary">
+			<span>Assignee</span>
+			<xsl:value-of select="./assignee/item" />
+		</li>
+	</ul>
+</xsl:template>
 
 <xsl:template match="issue-issue/entry" mode="form">
 	<form method="post" action="" enctype="multipart/form-data" id="update-form">
@@ -93,41 +124,14 @@
 </xsl:template>
 
 
-<xsl:template match="data" mode="sidebar">
-	<h2>Issue Stats</h2>
-	<h3>Activity</h3>
-	<xsl:call-template name="google-sparkline">
-		<xsl:with-param name="messages" select="issue-issue-messages/entry" />
-		<xsl:with-param name="width" select="'140'" />
-		<xsl:with-param name="height" select="'50'" />
-		<xsl:with-param name="bgcolor" select="'f6f6f6'" />
-	</xsl:call-template>
-	<h3>Progress</h3>
-	<xsl:call-template name="google-progress">
-		<xsl:with-param name="percentage">
-			<xsl:for-each select="/data/index-status/entry[@id = /data/issue-issue/entry/status/item/@id]">
-				<xsl:number />
-			</xsl:for-each>
-		</xsl:with-param>
-		<xsl:with-param name="maximum" select="count(/data/index-status/entry)" />
-		<xsl:with-param name="width" select="'140'" />
-		<xsl:with-param name="height" select="'140'" />
-	</xsl:call-template>
-</xsl:template>
+<!--
+ *
+ *
+ * MESSAGES
+ *
+ *
+-->
 
-
-
-
-
-<xsl:template match="data" mode="bodyclass">issue</xsl:template>
-
-
-
-
-
-<xsl:template match="issue-issue/entry">
-	<xsl:apply-templates select="." mode="attribute-list-infobar" />
-</xsl:template>
 
 <xsl:template match="issue-issue-messages/entry">
 	<p>
@@ -153,7 +157,7 @@
 	<p class="changes">
 		<xsl:choose>
 			<xsl:when test="position() = 1">
-				<xsl:apply-templates select="priority | status | category[@id != /data/index-category/entry[none = 'Yes']/@id] | assignee[@id != /data/project-project-contributors-assignees/entry[none = 'Yes']/@id] | milestone[@id != /data/index-milestone/entry[none = 'Yes']/@id]" />
+				<xsl:apply-templates select="priority | status | category[@id != /data/index-category/entry[none = 'Yes']/@id] | assignee[@id != /data/project-project-contributors-assignees/entry[role/name = 'Nobody']/@id] | milestone[@id != /data/index-milestone/entry[none = 'Yes']/@id]" />
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:apply-templates select="priority | status | category | assignee | milestone" />
@@ -164,13 +168,7 @@
 	<hr />
 </xsl:template>
 
-
-
-
-
-
-<xsl:template match="priority | category | assignee | milestone | status">
-		
+<xsl:template match="priority | category | assignee | milestone | status">		
 	<xsl:if test="not(../preceding-sibling::entry) or ../preceding-sibling::entry[1]/*[name() = name(current())]/item != current()/item">
 		<span><xsl:value-of select="concat(translate(substring(name(),1,1), 'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'), substring(name(),2))"/>: </span>
 		<xsl:choose>
@@ -185,37 +183,37 @@
 </xsl:template>
 
 
+<!--
+ *
+ *
+ * OVERLOADS
+ *
+ *
+-->
 
 
-
-
-<xsl:template match="issue-issue/entry" mode="attribute-list-infobar">
-	
-	<ul>
-		<xsl:attribute name="id">infobar</xsl:attribute>
-		<xsl:attribute name="style">background-color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/backgroundcolor" />; color: <xsl:value-of select="/data/index-status/entry[@id = current()/status/item/@id]/textcolor" />;</xsl:attribute>
-		<li class="status">
-			<span>Status</span>
-			<xsl:value-of select="./status/item" />
-		</li>
-		<li class="priority">
-			<span>Priority</span>
-			<xsl:value-of select="./priority/item" />
-		</li>
-		<li class="category auxiliary">
-			<span>Category</span>
-			<xsl:value-of select="./category/item" />
-		</li>
-		<li class="milestone auxiliary">
-			<span>Milestone</span>
-			<xsl:value-of select="./milestone/item" />
-		</li>
-		<li class="assignee auxiliary">
-			<span>Assignee</span>
-			<xsl:value-of select="./assignee/item" />
-		</li>
-	</ul>
+<xsl:template match="data" mode="sidebar">
+	<h2>Issue Stats</h2>
+	<h3>Activity</h3>
+	<xsl:call-template name="google-sparkline">
+		<xsl:with-param name="messages" select="issue-issue-messages/entry" />
+		<xsl:with-param name="width" select="'140'" />
+		<xsl:with-param name="height" select="'50'" />
+		<xsl:with-param name="bgcolor" select="'f6f6f6'" />
+	</xsl:call-template>
+	<h3>Progress</h3>
+	<xsl:call-template name="google-progress">
+		<xsl:with-param name="percentage">
+			<xsl:for-each select="/data/index-status/entry[@id = /data/issue-issue/entry/status/item/@id]">
+				<xsl:number />
+			</xsl:for-each>
+		</xsl:with-param>
+		<xsl:with-param name="maximum" select="count(/data/index-status/entry)" />
+		<xsl:with-param name="width" select="'140'" />
+		<xsl:with-param name="height" select="'140'" />
+	</xsl:call-template>
 </xsl:template>
 
+<xsl:template match="data" mode="bodyclass">issue</xsl:template>
 
 </xsl:stylesheet>
