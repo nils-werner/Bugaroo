@@ -15,7 +15,7 @@
 	
 <!-- login status -->
 <xsl:variable name="is-logged-in" select="/data/events/member-login-info/@logged-in"/>
-<xsl:variable name="user-id" select="/data/events/member-login-info/@id"/>
+<xsl:variable name="member-id" select="/data/events/member-login-info/@id"/>
 <xsl:variable name="is-admin" select="/data/events/login-info/@logged-in"/>
 <xsl:variable name="query-string" select="substring-after($current-path,'?')" />
 
@@ -40,9 +40,7 @@
 			<h1>
 				<a href="{$root}"><xsl:value-of select="$website-name"/></a>
 			</h1>
-			<a href="?member-action=logout" id="logout">
-				Logout
-			</a>
+			<xsl:apply-templates mode="logout" />
 		</div>
 		<div id="package">
 			<!-- <p class="date">
@@ -71,6 +69,14 @@
 </html>
 
 </xsl:template>
+
+<xsl:template match="data[events/member-login-info/@logged-in = 'yes']" mode="logout">
+	<a href="?member-action=logout" id="logout">
+		Logout
+	</a>
+</xsl:template>
+
+<xsl:template match="data" mode="logout" />
 
 <xsl:template match="data" mode="sidebar" />
 <xsl:template match="data" mode="bodyclass" />
