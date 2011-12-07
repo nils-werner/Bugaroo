@@ -30,6 +30,7 @@
 
 
 <xsl:template match="data" mode="sidebar">
+	<a id="create-issue" href="{$root}/{/data/project-project/entry/title/@handle}{/data/params/url-project}/new/">Create Issue</a>
 
 	<xsl:variable name="default-value" select="'- All -'" />
 	

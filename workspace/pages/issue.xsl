@@ -193,6 +193,7 @@
 
 
 <xsl:template match="data" mode="sidebar">
+	<a id="create-issue" href="{$root}/{/data/project-project/entry/title/@handle}/new/">Create Issue</a>
 	<h2>Issue Stats</h2>
 	<h3>Activity</h3>
 	<xsl:call-template name="google-sparkline">

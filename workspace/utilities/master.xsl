@@ -59,7 +59,6 @@
 			</p> -->
 			<div id="content">
 				<div id="sidebar">
-					<a id="create-issue" href="{$root}/{/data/project-project/entry/title/@handle}{/data/params/url-project}/new/">Create Issue</a>
 					<xsl:apply-templates mode="sidebar"/>				
 				</div>
 				<xsl:apply-templates/>

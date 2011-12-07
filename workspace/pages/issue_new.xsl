@@ -26,6 +26,8 @@
 <xsl:template match="data">
 	<h2>Create New Issue</h2>
 	
+	<a href="../">&#8592; <xsl:value-of select="/data/project-project/entry/title" /></a>
+
 	<xsl:variable name="default-value" select="'- No change -'" />
 
 	<form method="post" action="" enctype="multipart/form-data" id="update-form">
@@ -92,6 +94,7 @@
 -->
 
 <xsl:template match="data" mode="sidebar">
+	<a id="create-issue" href="{$root}/{/data/params/project}/new/">Create Issue</a>
 	<h2>Issue Stats</h2>
 	<h3>Activity</h3>
 	<xsl:call-template name="google-sparkline">
