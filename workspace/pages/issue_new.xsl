@@ -15,6 +15,14 @@
 	indent="yes" />
 
 
+<!--
+ *
+ *
+ * FORM
+ *
+ *
+-->
+
 <xsl:template match="data">
 	<h2>Create New Issue</h2>
 	
@@ -75,9 +83,13 @@
 </xsl:template>
 
 
-
-
-
+<!--
+ *
+ *
+ * OVERLOADS
+ *
+ *
+-->
 
 <xsl:template match="data" mode="sidebar">
 	<h2>Issue Stats</h2>
