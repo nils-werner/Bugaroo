@@ -10,16 +10,17 @@ This repository does not use the standard `install.php` and `install.sql` files 
 
  1. Clone the repository to your server
    
-         git clone git://github.com/nils-werner/Bugaroo.git
+         git clone git://github.com/nils-werner/Bugaroo.git bugaroo
+         cd bugaroo
  
  2. Update all submodules
    
          git submodule update --init
  
- 3. Flush data.sql and authors.sql into your database
+ 3. Flush data.sql and authors.sql into your database (in this case named `bugaroo`)
    
-         mysql bugaroo < authors.sql
-         mysql bugaroo < data.sql
+         mysql bugaroo < workspace/authors.sql
+         mysql bugaroo < workspace/data.sql
  
  4. Create manifest, manifest/logs, manifest/cache and manifest/tmp
    
