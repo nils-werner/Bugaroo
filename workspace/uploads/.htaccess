@@ -1,0 +1,9 @@
+Options -Indexes
+
+<ifModule mod_rewrite.c>
+	<ifModule mod_headers.c>
+		SetEnvIf Request_URI "([^\/]*)(\-[a-f0-9]{13})(\.[^\.]+)$" FILENAME=$1$3
+		Header set "Content-disposition" "attachment; filename=%{FILENAME}e"
+		UnsetEnv FILENAME
+	</ifModule>
+</ifModule>
